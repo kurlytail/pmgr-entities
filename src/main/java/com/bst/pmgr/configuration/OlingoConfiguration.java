@@ -17,7 +17,7 @@ public class OlingoConfiguration {
 				new CXFNonSpringJaxrsServlet(), "/pmgr.svc/*");
 		Map<String, String> initParameters = new HashMap<String, String>();
 		initParameters.put("javax.ws.rs.Application", "org.apache.olingo.odata2.core.rest.app.ODataApplication");
-		initParameters.put("org.apache.olingo.odata2.service.factory", "com.bst.odata.utils.JPAServiceFactory");
+		initParameters.put("org.apache.olingo.odata2.service.factory", "com.bst.pmgr.configuration.JPAServiceFactory");
 		odataServletRegistrationBean.setInitParameters(initParameters);
 		return odataServletRegistrationBean;
 	}

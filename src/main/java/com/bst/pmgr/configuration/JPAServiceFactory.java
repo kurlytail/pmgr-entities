@@ -8,7 +8,7 @@ import org.apache.olingo.odata2.jpa.processor.api.exception.ODataJPARuntimeExcep
 
 public class JPAServiceFactory extends ODataJPAServiceFactory {
 
-	public static final String DEFAULT_ENTITY_UNIT_NAME = "PMGR";
+	public static final String DEFAULT_ENTITY_UNIT_NAME = "com.bst.pmgr.entities";
 	public static final String ENTITY_MANAGER_FACTORY_ID = "entityManagerFactory";
 
 	@Override
