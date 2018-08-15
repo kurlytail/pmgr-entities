@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Activity {
+public class GenericActivity {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
@@ -22,6 +22,16 @@ public class Activity {
 		this.name = name;
 	}
 
+	public String getMetaName() {
+		return metaName;
+	}
+
+	public void setMetaName(String metaName) {
+		this.metaName = metaName;
+	}
+
 	private String name;
+	
+	private String metaName;
     
 }

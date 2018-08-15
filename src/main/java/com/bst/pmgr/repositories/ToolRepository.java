@@ -2,7 +2,7 @@ package com.bst.pmgr.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.bst.pmgr.entities.Tool;
+import com.bst.pmgr.entities.GenericTool;
 
-public interface ToolRepository extends CrudRepository<Tool, Long> {
+public interface ToolRepository extends CrudRepository<GenericTool, Long> {
 }
