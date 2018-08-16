@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class GenericProject {
+public class Manager {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
@@ -23,4 +23,5 @@ public class GenericProject {
 	}
 	
 	private String name;
+
 }

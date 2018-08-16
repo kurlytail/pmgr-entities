@@ -4,9 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class GenericDocument {
+public class Tool {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
@@ -33,4 +35,9 @@ public class GenericDocument {
 	private String name;
 	
 	private String metaName;
+	
+	@ManyToOne
+    @JoinColumn(name = "fk_project")
+	private Project project;
+
 }

@@ -1,12 +1,19 @@
 package com.bst.pmgr.entities;
 
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class GenericActivity {
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "activityType")
+public abstract class Activity {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
@@ -30,8 +37,19 @@ public class GenericActivity {
 		this.metaName = metaName;
 	}
 
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
 	private String name;
 	
 	private String metaName;
     
+	@ManyToOne
+    @JoinColumn(name = "fk_project")
+	private Project project;
 }
