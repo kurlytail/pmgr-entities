@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+Implementation-Title: pmgr-entities
+Implementation-Version: 0.1.0
 Built-By: ashwin
+Implementation-Vendor-Id: com.bst
 Build-Jdk: 1.8.0_101
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-deps/pmgr-entities
 Created-By: Maven Integration for Eclipse
 
