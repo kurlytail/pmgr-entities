@@ -37,11 +37,11 @@ public abstract class Activity {
 		this.metaName = metaName;
 	}
 
-	public Project getProject() {
+	public Work getProject() {
 		return project;
 	}
 
-	public void setProject(Project project) {
+	public void setProject(Work project) {
 		this.project = project;
 	}
 
@@ -51,5 +51,5 @@ public abstract class Activity {
     
 	@ManyToOne
     @JoinColumn(name = "fk_project")
-	private Project project;
+	private Work project;
 }

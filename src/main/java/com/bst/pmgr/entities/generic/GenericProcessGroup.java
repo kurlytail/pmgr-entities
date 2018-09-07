@@ -1,4 +1,4 @@
-package com.bst.pmgr.generic.entities;
+package com.bst.pmgr.entities.generic;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;

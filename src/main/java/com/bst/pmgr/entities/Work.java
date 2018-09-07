@@ -3,6 +3,7 @@ package com.bst.pmgr.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,13 +16,14 @@ import javax.persistence.OneToMany;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "activityType")
-public class Project {
+public class Work {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+    @Column(nullable = false, updatable = false)
 	private String name;
-	
-    @OneToMany(mappedBy = "project")
+
+	@OneToMany(mappedBy = "project")
     private List<Activity> activities = new ArrayList<Activity>();
     
     @OneToMany(mappedBy = "project")
@@ -43,5 +45,54 @@ public class Project {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+    public Long getId() {
+		return id;
+	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public List<Activity> getActivities() {
+		return activities;
+	}
+
+	public void setActivities(List<Activity> activities) {
+		this.activities = activities;
+	}
+
+	public List<Document> getDocuments() {
+		return documents;
+	}
+
+	public void setDocuments(List<Document> documents) {
+		this.documents = documents;
+	}
+
+	public List<Tool> getTools() {
+		return tools;
+	}
+
+	public void setTools(List<Tool> tools) {
+		this.tools = tools;
+	}
+
+	public List<Process> getProcesses() {
+		return processes;
+	}
+
+	public void setProcesses(List<Process> processes) {
+		this.processes = processes;
+	}
+
+	public List<ProcessGroup> getProcessGroups() {
+		return processGroups;
+	}
+
+	public void setProcessGroups(List<ProcessGroup> processGroups) {
+		this.processGroups = processGroups;
+	}
+
+	
 }
