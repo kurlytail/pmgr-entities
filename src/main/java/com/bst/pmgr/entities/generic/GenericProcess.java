@@ -1,12 +1,12 @@
-package com.bst.pmgr.generic.entities;
+package com.bst.pmgr.entities.generic;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
-import com.bst.pmgr.entities.Manager;
+import com.bst.pmgr.entities.Process;
 
 @Entity
 @DiscriminatorValue("Generic")
-public class GenericManager extends Manager {
+public class GenericProcess extends Process {
 
 }

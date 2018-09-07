@@ -43,6 +43,6 @@ public class Process {
     
 	@ManyToOne
     @JoinColumn(name = "fk_project")
-	private Project project;
+	private Work project;
 
 }

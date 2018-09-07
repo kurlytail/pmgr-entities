@@ -1,12 +1,12 @@
-package com.bst.pmgr.generic.entities;
+package com.bst.pmgr.entities.generic;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
-import com.bst.pmgr.entities.Project;
+import com.bst.pmgr.entities.Tool;
 
 @Entity
 @DiscriminatorValue("Generic")
-public class GenericProject extends Project {
+public class GenericTool extends Tool {
 
 }

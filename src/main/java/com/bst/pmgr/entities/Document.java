@@ -22,7 +22,7 @@ public class Document {
 	
 	@ManyToOne
     @JoinColumn(name = "fk_project")
-	private Project project;
+	private Work project;
 
 	public String getName() {
 		return name;

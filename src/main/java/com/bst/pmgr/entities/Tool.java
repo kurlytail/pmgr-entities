@@ -43,6 +43,6 @@ public class Tool {
 	
 	@ManyToOne
     @JoinColumn(name = "fk_project")
-	private Project project;
+	private Work project;
 
 }
