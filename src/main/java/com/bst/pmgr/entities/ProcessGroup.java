@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -42,7 +41,6 @@ public class ProcessGroup {
 	private String metaName;
 	
 	@ManyToOne
-    @JoinColumn(name = "fk_project")
-	private Work project;
+	private Work work;
 
 }

@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -38,11 +37,10 @@ public abstract class Activity {
 	}
 
 	public Work getProject() {
-		return project;
+		return work;
 	}
 
-	public void setProject(Work project) {
-		this.project = project;
+	public void setProject(Work work) {
 	}
 
 	private String name;
@@ -50,6 +48,5 @@ public abstract class Activity {
 	private String metaName;
     
 	@ManyToOne
-    @JoinColumn(name = "fk_project")
-	private Work project;
+	private Work work;
 }
