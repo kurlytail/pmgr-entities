@@ -11,11 +11,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "activityType")
+@DiscriminatorColumn(name = "workType")
 public class Work {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -23,20 +24,31 @@ public class Work {
     @Column(nullable = false, updatable = false)
 	private String name;
 
-	@OneToMany(mappedBy = "project")
+	@OneToMany(mappedBy = "work")
     private List<Activity> activities = new ArrayList<Activity>();
     
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "work")
     private List<Document> documents = new ArrayList<Document>();
     
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "work")
     private List<Tool> tools = new ArrayList<Tool>();
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "work")
     private List<Process> processes = new ArrayList<Process>();
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "work")
     private List<ProcessGroup> processGroups = new ArrayList<ProcessGroup>();
+    
+    @ManyToOne
+    private Manager manager;
+
+	public Manager getManager() {
+		return manager;
+	}
+
+	public void setManager(Manager manager) {
+		this.manager = manager;
+	}
 
 	public String getName() {
 		return name;
