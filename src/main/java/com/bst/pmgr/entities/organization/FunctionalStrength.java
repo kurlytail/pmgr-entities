@@ -22,7 +22,7 @@ public class FunctionalStrength {
 	@ManyToOne
     private Organization organization;
 	
-	@ManyToMany(mappedBy = "functionalStrengths")
+	@ManyToMany
 	private List<Division> divisions;
 
 	public Organization getOrganization() {

@@ -22,7 +22,7 @@ public class LegalJurisdiction {
 	@ManyToOne
     private Organization organization;
 	
-	@ManyToMany(mappedBy = "legalJurisdictions")
+	@ManyToMany
 	private List<Division> divisions;
 
 	public Organization getOrganization() {

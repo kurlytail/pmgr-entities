@@ -22,7 +22,7 @@ public class PhysicalLocation {
 	@ManyToOne
     private Organization organization;
 	
-	@ManyToMany(mappedBy = "physicalLocations")
+	@ManyToMany
 	private List<Division> divisions;
 
 	public Organization getOrganization() {
