@@ -1,9 +1,11 @@
 package com.bst.pmgr.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,6 +14,9 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.bst.pmgr.entities.audit.SectionAudit;
+
+@EntityListeners(SectionAudit.class)
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "sectionType")
@@ -43,24 +48,12 @@ public class Section {
 		return document;
 	}
 
-	public void setDocument(Document document) {
-		this.document = document;
-	}
-
 	public Section getParentSection() {
 		return parentSection;
 	}
 
-	public void setParentSection(Section parentSection) {
-		this.parentSection = parentSection;
-	}
-
 	public List<Section> getChildSections() {
 		return childSections;
-	}
-
-	public void setChildSections(List<Section> childSections) {
-		this.childSections = childSections;
 	}
 
 	@ManyToOne
@@ -70,7 +63,7 @@ public class Section {
 	private Section parentSection;
 	
 	@OneToMany(mappedBy = "parentSection")
-	private List<Section> childSections;
+	private List<Section> childSections = new ArrayList<>();
 
 	public String getName() {
 		return name;
@@ -79,5 +72,4 @@ public class Section {
 	public void setName(String name) {
 		this.name = name;
 	}
-
 }
