@@ -16,7 +16,7 @@ import com.bst.pmgr.entities.audit.ActivityAudit;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "activityType")
-public abstract class Activity {
+public class Activity {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
