@@ -58,6 +58,7 @@ public class SectionAuditTest {
 		expect(sections).toMatchSnapshot();
 
 		Document document = new Document();
+		document.setName("Document");
 		document = documentRepository.save(document);
 		section.setDocument(document);
 		sectionRepository.save(section);
@@ -71,8 +72,11 @@ public class SectionAuditTest {
 	public void testParentSectionField() throws Exception {
 
 		Document document = new Document();
+		document.setName("document");
 		document = documentRepository.save(document);
+
 		Document document1 = new Document();
+		document1.setName("document1");
 		document1 = documentRepository.save(document1);
 		
 		Section section = new Section();
