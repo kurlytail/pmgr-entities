@@ -15,31 +15,30 @@ import javax.persistence.OneToMany;
 
 import com.bst.pmgr.entities.audit.DocumentAudit;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 @EntityListeners(DocumentAudit.class)
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "documentType")
+@ToString
+@Getter
+@EqualsAndHashCode
 public class Document {
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
+	@Setter
 	private String name;
-	
+
 	@ManyToOne
+	@Setter
 	private Work work;
-	
+
 	@OneToMany(mappedBy = "document")
 	private List<Section> sections;
-
-	public List<Section> getSections() {
-		return sections;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 }

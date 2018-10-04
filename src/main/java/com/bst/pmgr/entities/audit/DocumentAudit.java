@@ -1,14 +1,14 @@
 package com.bst.pmgr.entities.audit;
 
 import javax.persistence.PrePersist;
-import javax.persistence.PreRemove;
-import javax.persistence.PreUpdate;
+
+import com.bst.pmgr.entities.Document;
 
 public class DocumentAudit {
 	@PrePersist
-	@PreUpdate
-	@PreRemove
-	private void beforeAnyOperation(Object object) {
+	private void beforeAnyOperation(Document object) {
+		if(object.getName() == null) {
+			object.setName("Document");
+		}
 	}
-
 }

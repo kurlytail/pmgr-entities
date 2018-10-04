@@ -17,15 +17,25 @@ import javax.persistence.OneToMany;
 
 import com.bst.pmgr.entities.audit.WorkAudit;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 @EntityListeners(WorkAudit.class)
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "workType")
+@ToString
+@Getter
+@EqualsAndHashCode
 public class Work {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+    
     @Column(nullable = false, updatable = false)
+    @Setter
 	private String name;
 
 	@OneToMany(mappedBy = "work")
@@ -45,70 +55,4 @@ public class Work {
     
     @ManyToOne
     private Manager manager;
-
-	public Manager getManager() {
-		return manager;
-	}
-
-	public void setManager(Manager manager) {
-		this.manager = manager;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-    public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public List<Activity> getActivities() {
-		return activities;
-	}
-
-	public void setActivities(List<Activity> activities) {
-		this.activities = activities;
-	}
-
-	public List<Document> getDocuments() {
-		return documents;
-	}
-
-	public void setDocuments(List<Document> documents) {
-		this.documents = documents;
-	}
-
-	public List<Tool> getTools() {
-		return tools;
-	}
-
-	public void setTools(List<Tool> tools) {
-		this.tools = tools;
-	}
-
-	public List<Process> getProcesses() {
-		return processes;
-	}
-
-	public void setProcesses(List<Process> processes) {
-		this.processes = processes;
-	}
-
-	public List<ProcessGroup> getProcessGroups() {
-		return processGroups;
-	}
-
-	public void setProcessGroups(List<ProcessGroup> processGroups) {
-		this.processGroups = processGroups;
-	}
-
-	
 }
