@@ -17,26 +17,61 @@ import javax.persistence.OneToMany;
 
 import com.bst.pmgr.entities.audit.WorkAudit;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 @EntityListeners(WorkAudit.class)
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "workType")
-@ToString
-@Getter
-@EqualsAndHashCode
 public class Work {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     
     @Column(nullable = false, updatable = false)
-    @Setter
 	private String name;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setManager(Manager manager) {
+		this.manager = manager;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public List<Activity> getActivities() {
+		return activities;
+	}
+
+	public List<Document> getDocuments() {
+		return documents;
+	}
+
+	public List<Tool> getTools() {
+		return tools;
+	}
+
+	public List<Process> getProcesses() {
+		return processes;
+	}
+
+	public List<ProcessGroup> getProcessGroups() {
+		return processGroups;
+	}
+
+	public Manager getManager() {
+		return manager;
+	}
 
 	@OneToMany(mappedBy = "work")
     private List<Activity> activities = new ArrayList<Activity>();
