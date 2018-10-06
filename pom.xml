@@ -83,6 +83,20 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.bst</groupId>
+            <artifactId>user-authentication</artifactId>
+            <version>[0.0.14-SNAPSHOT,)</version>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -173,9 +187,9 @@
             <url>https://repo.maven.apache.org/maven2/</url>
         </repository>
         <repository>
-            <id>maven-scp</id>
-            <name>Brainspeed Technologies Maven Repository</name>
-            <url>scp://maven@maven.brainspeedtech.com/data/maven/repo</url>
+            <id>bst-repo</id>
+            <name>Brainspeed Technologies Maven Repository - http</name>
+            <url>http://maven.brainspeedtech.com/</url>
         </repository>
     </repositories>
 

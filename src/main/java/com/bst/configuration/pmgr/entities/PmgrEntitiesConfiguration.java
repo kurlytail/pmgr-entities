@@ -9,9 +9,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EntityScan({"com.bst.pmgr.entities.generic", "com.bst.pmgr.entities"})
+@EntityScan({ "com.bst.pmgr.entities" })
 @EnableJpaRepositories("com.bst.pmgr.entities.repositories")
-//@ImportResource({"classpath:Aspect.xml"})
+// @ImportResource({"classpath:Aspect.xml"})
 @EnableTransactionManagement
 @EnableJpaAuditing
 @EnableAspectJAutoProxy

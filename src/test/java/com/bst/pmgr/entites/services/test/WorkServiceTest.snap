@@ -1,0 +1,11 @@
+{
+  "testWorkCreate" : [ {
+    "id" : 2,
+    "name" : "testWork",
+    "activities" : [ ],
+    "documents" : [ ],
+    "tools" : [ ],
+    "processes" : [ ],
+    "processGroups" : [ ]
+  } ]
+}
