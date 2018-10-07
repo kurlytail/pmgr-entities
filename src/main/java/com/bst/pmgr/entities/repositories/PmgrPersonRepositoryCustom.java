@@ -7,5 +7,5 @@ import com.bst.user.authentication.entities.Person;
 
 @Transactional
 public interface PmgrPersonRepositoryCustom {
-	PmgrPerson findByPerson(Person person);
+	public PmgrPerson findOrCreateByPerson(Person person);
 }

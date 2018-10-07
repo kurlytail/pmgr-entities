@@ -21,13 +21,18 @@ public class WorkService {
 
 	@Transactional
 	public Work create(Person createdBy, String name) {
-		PmgrPerson pmgrPerson = personRepository.findByPerson(createdBy);
+		PmgrPerson pmgrPerson = personRepository.findOrCreateByPerson(createdBy);
 
 		Work work = new Work();
 		work.setName(name);
-
-		work.setCreatedBy(pmgrPerson);
+		pmgrPerson.addWork(work);
+		
 		return workRepository.save(work);
+	}
+	
+	@Transactional
+	public void delete(Work work) {
+		workRepository.delete(work);
 	}
 
 }

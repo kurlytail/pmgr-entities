@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.ContextConfiguration;
@@ -20,6 +19,7 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.bst.configuration.pmgr.entities.PmgrEntitiesConfiguration;
+import com.bst.pmgr.entities.PmgrPerson;
 import com.bst.pmgr.entities.Work;
 import com.bst.pmgr.entities.services.WorkService;
 import com.bst.user.authentication.entities.Person;
@@ -38,6 +38,9 @@ import com.bst.utility.testlib.SnapshotListener;
 class WorkServiceTest {
 
 	@Autowired
+	private TestEntityManager entityManager;
+	
+	@Autowired
 	private PersonRepository personRepository;
 
 	@Autowired
@@ -50,6 +53,27 @@ class WorkServiceTest {
 
 		Work work = workService.create(person, "testWork");
 		expect(work).toMatchSnapshot();
+		
+		entityManager.flush();
 	}
+	
+	@Test
+	void testWorkDelete() throws Exception {
+		Person person = new Person("jon@doe.com");
+		person = personRepository.save(person);
 
+		Work work = workService.create(person, "testWork");
+		entityManager.flush();
+		
+		work = entityManager.refresh(work);
+		work.getCreatedBy().removeWork(work);
+		entityManager.flush();
+		
+		PmgrPerson createdBy = entityManager.refresh(work.getCreatedBy());
+		expect(createdBy).toMatchSnapshot();
+		
+		work = entityManager.find(Work.class, work.getId());
+		expect(work).toMatchSnapshot();
+	}
+	
 }
