@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators.StringIdGenerator;
 public class MetaProcess {
 	private String name;
 	private Map<String, MetaActivity> activities = new HashMap<>();
-	private Map<String, MetaDocument> generatedDocuments = new HashMap<>();
+	private Map<String, MetaDocument> producedDocuments = new HashMap<>();
 	private Map<String, MetaDocument> consumedDocuments = new HashMap<>();
 	private MetaProcessGroup processGroup;
 	private Map<String, MetaTool> tools = new HashMap<>();
@@ -41,11 +41,11 @@ public class MetaProcess {
 		} else if (!this.consumedDocuments.equals(other.consumedDocuments)) {
 			return false;
 		}
-		if (this.generatedDocuments == null) {
-			if (other.generatedDocuments != null) {
+		if (this.producedDocuments == null) {
+			if (other.producedDocuments != null) {
 				return false;
 			}
-		} else if (!this.generatedDocuments.equals(other.generatedDocuments)) {
+		} else if (!this.producedDocuments.equals(other.producedDocuments)) {
 			return false;
 		}
 		if (this.name == null) {
@@ -80,8 +80,8 @@ public class MetaProcess {
 		return this.consumedDocuments;
 	}
 
-	public Map<String, MetaDocument> getGeneratedDocuments() {
-		return this.generatedDocuments;
+	public Map<String, MetaDocument> getProducedDocuments() {
+		return this.producedDocuments;
 	}
 
 	public String getName() {
@@ -102,7 +102,7 @@ public class MetaProcess {
 		int result = 1;
 		result = prime * result + ((this.activities == null) ? 0 : this.activities.hashCode());
 		result = prime * result + ((this.consumedDocuments == null) ? 0 : this.consumedDocuments.hashCode());
-		result = prime * result + ((this.generatedDocuments == null) ? 0 : this.generatedDocuments.hashCode());
+		result = prime * result + ((this.producedDocuments == null) ? 0 : this.producedDocuments.hashCode());
 		result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
 		result = prime * result + ((this.processGroup == null) ? 0 : this.processGroup.hashCode());
 		result = prime * result + ((this.tools == null) ? 0 : this.tools.hashCode());
@@ -118,7 +118,7 @@ public class MetaProcess {
 	}
 
 	public void setGeneratedDocuments(Map<String, MetaDocument> generatedDocuments) {
-		this.generatedDocuments = generatedDocuments;
+		this.producedDocuments = generatedDocuments;
 	}
 
 	public void setName(String name) {
@@ -131,6 +131,11 @@ public class MetaProcess {
 
 	public void setTools(Map<String, MetaTool> tools) {
 		this.tools = tools;
+	}
+
+	@Override
+	public String toString() {
+		return "MetaProcess [name=" + this.name + "]";
 	}
 
 }

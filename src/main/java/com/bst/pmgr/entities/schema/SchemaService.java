@@ -23,11 +23,15 @@ public class SchemaService {
 	public SchemaService() throws JsonProcessingException, IOException {
 		final ObjectMapper objectMapper = new ObjectMapper();
 		this.schemaMap = objectMapper.readValue(this.getClass().getResourceAsStream("schema.json"),
-				new TypeReference<Map<String, SchemaActivity>>(){});
+				new TypeReference<Map<String, SchemaActivity>>() {
+				});
 
 		this.createSkeletonMaps();
 		this.fixupActivities();
 		this.fixupDocuments();
+		this.fixupTools();
+		this.fixupProcesses();
+		this.fixupProcessGroups();
 	}
 
 	private void createSkeletonMaps() {
@@ -83,26 +87,92 @@ public class SchemaService {
 
 	private void fixupDocuments() {
 		this.activities.forEach((name, metaActivity) -> {
-			metaActivity.getInputs().forEach((inputName, metaDocument) -> {
+			final SchemaActivity schemaActivity = this.schemaMap.get(name);
+
+			schemaActivity.getInputs().forEach(inputName -> {
+				final MetaDocument metaDocument = this.documents.get(inputName);
 				metaDocument.getConsumingActivities().put(inputName, metaActivity);
-				metaActivity.getTools().forEach((toolName, metaTool) -> {
-					metaDocument.getConsumingTools().put(toolName, metaTool);
+				schemaActivity.getTools().forEach(toolName -> {
+					metaDocument.getConsumingTools().put(toolName, this.tools.get(toolName));
 				});
-				metaDocument.getConsumingProcesses().put(metaActivity.getProcess().getName(),
-						metaActivity.getProcess());
-				metaDocument.getConsumingProcessGroups().put(metaActivity.getProcessGroup().getName(),
-						metaActivity.getProcessGroup());
+				metaDocument.getConsumingProcesses().put(schemaActivity.getProcess(),
+						this.processes.get(schemaActivity.getProcess()));
+				metaDocument.getConsumingProcessGroups().put(schemaActivity.getProcessGroup(),
+						this.processGroups.get(schemaActivity.getProcessGroup()));
 			});
 
-			metaActivity.getOutputs().forEach((outputName, metaDocument) -> {
+			schemaActivity.getOutputs().forEach(outputName -> {
+				final MetaDocument metaDocument = this.documents.get(outputName);
 				metaDocument.getProducingActivities().put(outputName, metaActivity);
-				metaActivity.getTools().forEach((toolName, metaTool) -> {
-					metaDocument.getProducingTools().put(toolName, metaTool);
+				schemaActivity.getTools().forEach(toolName -> {
+					metaDocument.getProducingTools().put(toolName, this.tools.get(toolName));
 				});
-				metaDocument.getProducingProcesses().put(metaActivity.getProcess().getName(),
-						metaActivity.getProcess());
-				metaDocument.getProducingProcessGroups().put(metaActivity.getProcessGroup().getName(),
-						metaActivity.getProcessGroup());
+				metaDocument.getProducingProcesses().put(schemaActivity.getProcess(),
+						this.processes.get(schemaActivity.getProcess()));
+				metaDocument.getProducingProcessGroups().put(schemaActivity.getProcessGroup(),
+						this.processGroups.get(schemaActivity.getProcessGroup()));
+			});
+		});
+	}
+
+	private void fixupProcesses() {
+		this.activities.forEach((name, metaActivity) -> {
+			final SchemaActivity schemaActivity = this.schemaMap.get(name);
+
+			final String process = schemaActivity.getProcess();
+			final MetaProcess metaProcess = this.processes.get(process);
+			metaProcess.getActivities().put(name, metaActivity);
+			schemaActivity.getInputs().forEach(inputName -> {
+				metaProcess.getConsumedDocuments().put(inputName, this.documents.get(inputName));
+			});
+			schemaActivity.getOutputs().forEach(outputName -> {
+				metaProcess.getProducedDocuments().put(outputName, this.documents.get(outputName));
+			});
+			metaProcess.setProcessGroup(this.processGroups.get(schemaActivity.getProcess()));
+			schemaActivity.getTools().forEach(toolName -> {
+				metaProcess.getTools().put(toolName, this.tools.get(toolName));
+			});
+		});
+	}
+
+	private void fixupProcessGroups() {
+		this.activities.forEach((name, metaActivity) -> {
+			final SchemaActivity schemaActivity = this.schemaMap.get(name);
+
+			final String processGroupName = schemaActivity.getProcessGroup();
+			final MetaProcessGroup metaProcessGroup = this.processGroups.get(processGroupName);
+			metaProcessGroup.getActivities().put(name, metaActivity);
+			schemaActivity.getInputs().forEach(inputName -> {
+				metaProcessGroup.getConsumedDocuments().put(inputName, this.documents.get(inputName));
+			});
+			schemaActivity.getOutputs().forEach(outputName -> {
+				metaProcessGroup.getProducedDocuments().put(outputName, this.documents.get(outputName));
+			});
+			metaProcessGroup.getProcesses().put(schemaActivity.getProcess(),
+					this.processes.get(schemaActivity.getProcess()));
+			schemaActivity.getTools().forEach(toolName -> {
+				metaProcessGroup.getTools().put(toolName, this.tools.get(toolName));
+			});
+		});
+	}
+
+	private void fixupTools() {
+		this.activities.forEach((name, metaActivity) -> {
+			final SchemaActivity schemaActivity = this.schemaMap.get(name);
+
+			schemaActivity.getTools().forEach(toolName -> {
+				final MetaTool metaTool = this.tools.get(toolName);
+				metaTool.getActivities().put(name, metaActivity);
+				schemaActivity.getInputs().forEach(inputName -> {
+					metaTool.getConsumedDocuments().put(inputName, this.documents.get(inputName));
+				});
+				metaActivity.getOutputs().forEach((outputName, metaDocument) -> {
+					metaTool.getProducedDocuments().put(outputName, this.documents.get(outputName));
+				});
+				metaTool.getProcesses().put(schemaActivity.getProcess(),
+						this.processes.get(schemaActivity.getProcess()));
+				metaTool.getProcessGroups().put(schemaActivity.getProcessGroup(),
+						this.processGroups.get(schemaActivity.getProcessGroup()));
 			});
 		});
 	}
@@ -131,27 +201,27 @@ public class SchemaService {
 		return this.tools;
 	}
 
-	public void setActivities(Map<String, MetaActivity> activities) {
+	public void setActivities(final Map<String, MetaActivity> activities) {
 		this.activities = activities;
 	}
 
-	public void setDocuments(Map<String, MetaDocument> documents) {
+	public void setDocuments(final Map<String, MetaDocument> documents) {
 		this.documents = documents;
 	}
 
-	public void setProcesses(Map<String, MetaProcess> processes) {
+	public void setProcesses(final Map<String, MetaProcess> processes) {
 		this.processes = processes;
 	}
 
-	public void setProcessGroups(Map<String, MetaProcessGroup> processGroups) {
+	public void setProcessGroups(final Map<String, MetaProcessGroup> processGroups) {
 		this.processGroups = processGroups;
 	}
 
-	public void setSchemaMap(Map<String, SchemaActivity> schemaMap) {
+	public void setSchemaMap(final Map<String, SchemaActivity> schemaMap) {
 		this.schemaMap = schemaMap;
 	}
 
-	public void setTools(Map<String, MetaTool> tools) {
+	public void setTools(final Map<String, MetaTool> tools) {
 		this.tools = tools;
 	}
 

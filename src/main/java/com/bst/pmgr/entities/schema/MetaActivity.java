@@ -136,8 +136,7 @@ public class MetaActivity {
 
 	@Override
 	public String toString() {
-		return "MetaActivity [inputs=" + this.inputs + ", name=" + this.name + ", outputs=" + this.outputs
-				+ ", process=" + this.process + ", processGroup=" + this.processGroup + ", tools=" + this.tools + "]";
+		return "MetaActivity [name=" + this.name + "]";
 	}
 
 }

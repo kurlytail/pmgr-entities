@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators.StringIdGenerator;
 public class MetaTool {
 	private String name;
 	private Map<String, MetaActivity> activities = new HashMap<>();
-	private Map<String, MetaDocument> generatedDocuments = new HashMap<>();
+	private Map<String, MetaDocument> producedDocuments = new HashMap<>();
 	private Map<String, MetaDocument> consumedDocuments = new HashMap<>();
 	private Map<String, MetaProcess> processes = new HashMap<>();
 	private Map<String, MetaProcessGroup> processGroups = new HashMap<>();
@@ -41,11 +41,11 @@ public class MetaTool {
 		} else if (!this.consumedDocuments.equals(other.consumedDocuments)) {
 			return false;
 		}
-		if (this.generatedDocuments == null) {
-			if (other.generatedDocuments != null) {
+		if (this.producedDocuments == null) {
+			if (other.producedDocuments != null) {
 				return false;
 			}
-		} else if (!this.generatedDocuments.equals(other.generatedDocuments)) {
+		} else if (!this.producedDocuments.equals(other.producedDocuments)) {
 			return false;
 		}
 		if (this.name == null) {
@@ -80,10 +80,6 @@ public class MetaTool {
 		return this.consumedDocuments;
 	}
 
-	public Map<String, MetaDocument> getGeneratedDocuments() {
-		return this.generatedDocuments;
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -96,13 +92,17 @@ public class MetaTool {
 		return this.processGroups;
 	}
 
+	public Map<String, MetaDocument> getProducedDocuments() {
+		return this.producedDocuments;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((this.activities == null) ? 0 : this.activities.hashCode());
 		result = prime * result + ((this.consumedDocuments == null) ? 0 : this.consumedDocuments.hashCode());
-		result = prime * result + ((this.generatedDocuments == null) ? 0 : this.generatedDocuments.hashCode());
+		result = prime * result + ((this.producedDocuments == null) ? 0 : this.producedDocuments.hashCode());
 		result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
 		result = prime * result + ((this.processGroups == null) ? 0 : this.processGroups.hashCode());
 		result = prime * result + ((this.processes == null) ? 0 : this.processes.hashCode());
@@ -118,7 +118,7 @@ public class MetaTool {
 	}
 
 	public void setGeneratedDocuments(Map<String, MetaDocument> generatedDocuments) {
-		this.generatedDocuments = generatedDocuments;
+		this.producedDocuments = generatedDocuments;
 	}
 
 	public void setName(String name) {
