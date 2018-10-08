@@ -4,6 +4,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -13,16 +19,23 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Service
 public class SchemaService {
 
+	static final Logger LOG = LoggerFactory.getLogger(SchemaService.class);
+
+	@Autowired
+	private ResourceLoader resourceLoader;
+
 	private Map<String, SchemaActivity> schemaMap = new HashMap<>();
 	private Map<String, MetaActivity> activities = new HashMap<>();
 	private Map<String, MetaDocument> documents = new HashMap<>();
 	private Map<String, MetaTool> tools = new HashMap<>();
 	private Map<String, MetaProcess> processes = new HashMap<>();
-	private Map<String, MetaProcessGroup> processGroups = new HashMap<>();
 
-	public SchemaService() throws JsonProcessingException, IOException {
+	private Map<String, MetaProcessGroup> processGroups = new HashMap<>();
+	
+	@PostConstruct
+	public void init() throws JsonProcessingException, IOException {
 		final ObjectMapper objectMapper = new ObjectMapper();
-		this.schemaMap = objectMapper.readValue(this.getClass().getResourceAsStream("schema.json"),
+		this.schemaMap = objectMapper.readValue(resourceLoader.getResource("classpath:schema.json").getInputStream(),
 				new TypeReference<Map<String, SchemaActivity>>() {
 				});
 
