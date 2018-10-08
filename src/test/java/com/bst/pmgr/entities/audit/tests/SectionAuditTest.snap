@@ -1,5 +1,6 @@
 {
   "testDocumentField" : [ [ ], [ {
+    "id" : 2,
     "name" : "testName",
     "document" : {
       "id" : 1,
@@ -7,29 +8,23 @@
     }
   } ] ],
   "testParentSectionField" : [ [ {
+    "id" : 5,
     "name" : "parent testName",
     "document" : {
       "id" : 4,
       "name" : "document1"
     }
   } ], [ {
+    "id" : 5,
     "name" : "parent testName",
     "document" : {
       "id" : 3,
       "name" : "document"
     }
   }, {
+    "id" : 6,
     "name" : "testName",
-    "document" : {
-      "id" : 3,
-      "name" : "document"
-    },
-    "parentSection" : {
-      "name" : "parent testName",
-      "document" : {
-        "id" : 3,
-        "name" : "document"
-      }
-    }
+    "document" : 3,
+    "parentSection" : 5
   } ] ]
 }

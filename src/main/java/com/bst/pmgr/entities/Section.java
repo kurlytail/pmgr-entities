@@ -40,7 +40,6 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 public class Section {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@JsonIgnore
 	private Long id;
 
 	private String name;
