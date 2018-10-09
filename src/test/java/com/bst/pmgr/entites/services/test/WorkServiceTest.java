@@ -76,4 +76,21 @@ class WorkServiceTest {
 		expect(work).toMatchSnapshot();
 	}
 	
+	
+	@Test
+	void testProcess() throws Exception {
+		Person person = new Person("jon@doe.com");
+		person = personRepository.save(person);
+
+		Work work = workService.create(person, "testWork");
+		expect(work).toMatchSnapshot();
+		
+		entityManager.flush();
+		
+		workService.process(work);
+		
+		work = entityManager.find(Work.class, work.getId());
+		expect(work).toMatchSnapshot();
+	}
+  	
 }

@@ -23,5 +23,38 @@
       "email" : "jon@doe.com"
     },
     "works" : [ ]
-  }, { } ]
+  }, { } ],
+  "testProcess" : [ {
+    "id" : 6,
+    "name" : "testWork",
+    "activities" : [ ],
+    "documents" : [ ],
+    "tools" : [ ],
+    "processes" : [ ],
+    "processGroups" : [ ],
+    "createdBy" : {
+      "id" : 5,
+      "person" : {
+        "id" : 5,
+        "email" : "jon@doe.com"
+      },
+      "works" : [ 6 ]
+    }
+  }, {
+    "id" : 6,
+    "name" : "testWork",
+    "activities" : [ ],
+    "documents" : [ ],
+    "tools" : [ ],
+    "processes" : [ ],
+    "processGroups" : [ ],
+    "createdBy" : {
+      "id" : 5,
+      "person" : {
+        "id" : 5,
+        "email" : "jon@doe.com"
+      },
+      "works" : [ 6 ]
+    }
+  } ]
 }

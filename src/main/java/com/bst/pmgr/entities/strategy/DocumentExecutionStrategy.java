@@ -2,11 +2,19 @@ package com.bst.pmgr.entities.strategy;
 
 import org.springframework.stereotype.Service;
 
+import com.bst.pmgr.entities.Work;
+
 @Service
-public class DocumentExecutionStrategy implements ExecutionStrategy {
+public class DocumentExecutionStrategy extends AbstractExecutionStrategy {
 
 	@Override
-	public void execute(StrategyDescriptor strategy) {
+	public Long computeStrategyScore(Work work) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void execute(Work work, StrategyDescriptor strategy) {
 		// TODO Auto-generated method stub
 		
 	}

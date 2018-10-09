@@ -107,7 +107,7 @@ public class PmgrPerson {
 
 	@Override
 	public String toString() {
-		return "PmgrPerson [id=" + this.id + ", person=" + this.person + ", works=" + this.works + "]";
+		return "PmgrPerson [id=" + this.id + ", person=" + this.person + "]";
 	}
 
 }
