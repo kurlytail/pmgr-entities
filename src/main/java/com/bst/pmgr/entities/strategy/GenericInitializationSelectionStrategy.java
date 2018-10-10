@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import com.bst.pmgr.entities.Work;
 
 @Component
-public class GenericSelectionStrategy extends AbstractSelectionStrategy {
+public class GenericInitializationSelectionStrategy extends AbstractSelectionStrategy {
 
 	@Override
 	public StrategyDescriptor computeSelection(Work work) {
@@ -16,10 +16,12 @@ public class GenericSelectionStrategy extends AbstractSelectionStrategy {
 
 	@Override
 	public Long computeStrategyScore(Work work) {
-		if (work.getActivities().size() == 0) {
-			/* No activities to start, cannot select */
+		if (work.getActivities().size() != 0) {
+			/* Already initialized */
 			return -1L;
 		}
+		
+		/* Lowest priority for any kind of work */
 		return 0L;
 	}
 

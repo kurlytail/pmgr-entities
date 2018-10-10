@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.bst.pmgr.entities.audit.ActivityAudit;
@@ -26,7 +27,7 @@ public class Activity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(nullable = false, updatable = false)
+	@Column(nullable = false)
 	private String metaName;
 
 	private String name;

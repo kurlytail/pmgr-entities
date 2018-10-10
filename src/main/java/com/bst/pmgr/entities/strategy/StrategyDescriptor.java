@@ -1,5 +1,8 @@
 package com.bst.pmgr.entities.strategy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.bst.pmgr.entities.Activity;
 import com.bst.pmgr.entities.Document;
 import com.bst.pmgr.entities.Process;
@@ -8,11 +11,11 @@ import com.bst.pmgr.entities.Tool;
 
 public class StrategyDescriptor {
 
-	private Document documents;
-	private Tool tools;
-	private Activity activities;
-	private ProcessGroup processGroups;
-	private Process processes;
+	private final List<Document> documents = new ArrayList<>();
+	private final List<Tool> tools = new ArrayList<>();
+	private final List<Activity> activities = new ArrayList<>();
+	private final List<ProcessGroup> processGroups = new ArrayList<>();
+	private final List<Process> processes = new ArrayList<>();
 
 	@Override
 	public boolean equals(final Object obj) {
@@ -64,26 +67,6 @@ public class StrategyDescriptor {
 		return true;
 	}
 
-	public Activity getActivities() {
-		return this.activities;
-	}
-
-	public Document getDocuments() {
-		return this.documents;
-	}
-
-	public Process getProcesses() {
-		return this.processes;
-	}
-
-	public ProcessGroup getProcessGroups() {
-		return this.processGroups;
-	}
-
-	public Tool getTools() {
-		return this.tools;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -94,26 +77,6 @@ public class StrategyDescriptor {
 		result = prime * result + ((this.processes == null) ? 0 : this.processes.hashCode());
 		result = prime * result + ((this.tools == null) ? 0 : this.tools.hashCode());
 		return result;
-	}
-
-	public void setActivities(final Activity activities) {
-		this.activities = activities;
-	}
-
-	public void setDocuments(final Document documents) {
-		this.documents = documents;
-	}
-
-	public void setProcesses(final Process processes) {
-		this.processes = processes;
-	}
-
-	public void setProcessGroups(final ProcessGroup processGroups) {
-		this.processGroups = processGroups;
-	}
-
-	public void setTools(final Tool tools) {
-		this.tools = tools;
 	}
 
 	@Override

@@ -6,7 +6,7 @@
 
     <artifactId>pmgr-entities</artifactId>
     <name>Core project manager entities</name>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.18-SNAPSHOT</version>
     <groupId>com.bst</groupId>
 
     <packaging>jar</packaging>

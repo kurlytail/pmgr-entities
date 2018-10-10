@@ -15,7 +15,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
+import javax.persistence.Table;
 
 import com.bst.pmgr.entities.audit.WorkAudit;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -26,12 +26,13 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "workType")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class Work {
+@Table(name = "WORK_TABLE")
+public class Work {	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@Column(nullable = false, updatable = false)
+	@Column(nullable = false)
 	private String name;
 
 	@OneToMany(mappedBy = "work")
@@ -49,7 +50,6 @@ public class Work {
 	@OneToMany(mappedBy = "work")
 	private final List<ProcessGroup> processGroups = new ArrayList<>();
 
-	@NotNull
 	@ManyToOne(fetch = FetchType.LAZY)
 	private PmgrPerson createdBy;
 
@@ -173,10 +173,6 @@ public class Work {
 
 	public void setCreatedBy(final PmgrPerson createdBy) {
 		this.createdBy = createdBy;
-	}
-
-	public void setId(final Long id) {
-		this.id = id;
 	}
 
 	public void setName(final String name) {
