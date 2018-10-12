@@ -239,10 +239,6 @@ public class Section {
 		System.out.println("prepersist");
 	}
 
-	public void setChildSections(final List<Section> childSections) {
-		this.childSections = childSections;
-	}
-
 	public void setDescription(final String description) {
 		this.description = description;
 	}

@@ -92,11 +92,7 @@ public class PmgrPerson {
 		result = prime * result + ((this.works == null) ? 0 : this.works.hashCode());
 		return result;
 	}
-
-	public void removeWork(final Work work) {
-		this.works.remove(work);
-	}
-
+	
 	public void setId(final Long id) {
 		this.id = id;
 	}

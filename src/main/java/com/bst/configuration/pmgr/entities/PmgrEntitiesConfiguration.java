@@ -16,8 +16,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaAuditing
 @EnableAspectJAutoProxy
 @EnableAutoConfiguration
-@ComponentScan({ "com.bst.pmgr.entities.components", "com.bst.pmgr.entities.services", "com.bst.pmgr.entities.schema",
-		"com.bst.pmgr.entities.strategy" })
+@ComponentScan({ "com.bst.pmgr.entities.components", "com.bst.pmgr.entities.schema",
+		"com.bst.pmgr.entities.configuration" })
 public class PmgrEntitiesConfiguration {
 
 }

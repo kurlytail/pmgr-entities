@@ -4,7 +4,10 @@
     "name" : "testName",
     "document" : {
       "id" : 1,
-      "name" : "Document"
+      "metaName" : "testName",
+      "name" : "Document",
+      "tools" : [ ],
+      "sections" : [ ]
     }
   } ] ],
   "testParentSectionField" : [ [ {
@@ -12,14 +15,20 @@
     "name" : "parent testName",
     "document" : {
       "id" : 4,
-      "name" : "document1"
+      "metaName" : "testName",
+      "name" : "document1",
+      "tools" : [ ],
+      "sections" : [ ]
     }
   } ], [ {
     "id" : 5,
     "name" : "parent testName",
     "document" : {
       "id" : 3,
-      "name" : "document"
+      "metaName" : "testName",
+      "name" : "document",
+      "tools" : [ ],
+      "sections" : [ ]
     }
   }, {
     "id" : 6,

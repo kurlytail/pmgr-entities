@@ -1,4 +1,4 @@
-package com.bst.pmgr.entities.strategy;
+package com.bst.pmgr.entities.components;
 
 import java.util.stream.Collectors;
 
@@ -9,13 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.bst.pmgr.entities.Activity;
+import com.bst.pmgr.entities.Document;
+import com.bst.pmgr.entities.Process;
+import com.bst.pmgr.entities.ProcessGroup;
 import com.bst.pmgr.entities.Work;
 import com.bst.pmgr.entities.schema.SchemaService;
 
 @Component
 public class WorkListener {
 
-	private RandomNameGenerator rnd = new RandomNameGenerator(0);
+	private final RandomNameGenerator rnd = new RandomNameGenerator(0);
 
 	@Autowired
 	private SchemaService schemaService;
@@ -23,16 +26,45 @@ public class WorkListener {
 	@PrePersist
 	public void prePersist(final Work work) throws Exception {
 		if (work.getName() == null) {
-			work.setName(rnd.next());
+			work.setName(this.rnd.next());
 		}
 
 		if (work.getActivities().size() == 0) {
-			work.getActivities().addAll(schemaService.getActivities().values().stream().map(metaActivity -> {
-				Activity activity = new Activity();
+			work.getActivities().addAll(this.schemaService.getActivities().values().stream().map(metaActivity -> {
+				final Activity activity = new Activity();
 				activity.setMetaName(metaActivity.getName());
-				activity.setName(rnd.next());
+				activity.setName(this.rnd.next());
 				return activity;
 			}).collect(Collectors.toList()));
 		}
+
+		if (work.getDocuments().size() == 0) {
+			work.getDocuments().addAll(this.schemaService.getDocuments().values().stream().map(metaDocument -> {
+				final Document document = new Document();
+				document.setMetaName(metaDocument.getName());
+				document.setName(this.rnd.next());
+				return document;
+			}).collect(Collectors.toList()));
+		}
+
+		if (work.getProcesses().size() == 0) {
+			work.getProcesses().addAll(this.schemaService.getProcesses().values().stream().map(metaProcess -> {
+				final Process process = new Process();
+				process.setMetaName(metaProcess.getName());
+				process.setName(this.rnd.next());
+				return process;
+			}).collect(Collectors.toList()));
+		}
+
+		if (work.getProcessGroups().size() == 0) {
+			work.getProcessGroups()
+					.addAll(this.schemaService.getProcessGroups().values().stream().map(metaProcessGroup -> {
+						final ProcessGroup processGroup = new ProcessGroup();
+						processGroup.setMetaName(metaProcessGroup.getName());
+						processGroup.setName(this.rnd.next());
+						return processGroup;
+					}).collect(Collectors.toList()));
+		}
 	}
+
 }

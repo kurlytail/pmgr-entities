@@ -1,4 +1,4 @@
-package com.bst.pmgr.entities.strategy;
+package com.bst.pmgr.entities.components;
 
 import javax.persistence.PrePersist;
 

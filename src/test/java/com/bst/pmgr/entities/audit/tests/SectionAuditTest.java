@@ -52,6 +52,7 @@ public class SectionAuditTest {
 	@Autowired
 	private DocumentRepository<Document> documentRepository;
 
+	@SuppressWarnings("unused")
 	@Autowired
 	private AuditService auditService;
 
@@ -70,6 +71,7 @@ public class SectionAuditTest {
 
 		Document document = new Document();
 		document.setName("Document");
+		document.setMetaName("testName");
 		document = this.documentRepository.save(document);
 		section.setDocument(document);
 		this.sectionRepository.save(section);
@@ -84,10 +86,12 @@ public class SectionAuditTest {
 
 		Document document = new Document();
 		document.setName("document");
+		document.setMetaName("testName");
 		document = this.documentRepository.save(document);
 
 		Document document1 = new Document();
 		document1.setName("document1");
+		document1.setMetaName("testName");
 		document1 = this.documentRepository.save(document1);
 
 		final Section section = new Section();

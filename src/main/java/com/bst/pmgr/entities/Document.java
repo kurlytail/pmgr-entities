@@ -1,7 +1,9 @@
 package com.bst.pmgr.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -27,13 +29,19 @@ public class Document {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@Column(nullable = false)
+	private String metaName;
+
 	private String name;
 
 	@ManyToOne
 	private Work work;
 
 	@OneToMany(mappedBy = "document")
-	private List<Section> sections;
+	private List<Tool> tools = new ArrayList<>();
+
+	@OneToMany(mappedBy = "document")
+	private List<Section> sections = new ArrayList<>();
 
 	@Override
 	public boolean equals(final Object obj) {
@@ -54,6 +62,13 @@ public class Document {
 		} else if (!this.id.equals(other.id)) {
 			return false;
 		}
+		if (this.metaName == null) {
+			if (other.metaName != null) {
+				return false;
+			}
+		} else if (!this.metaName.equals(other.metaName)) {
+			return false;
+		}
 		if (this.name == null) {
 			if (other.name != null) {
 				return false;
@@ -66,6 +81,13 @@ public class Document {
 				return false;
 			}
 		} else if (!this.sections.equals(other.sections)) {
+			return false;
+		}
+		if (this.tools == null) {
+			if (other.tools != null) {
+				return false;
+			}
+		} else if (!this.tools.equals(other.tools)) {
 			return false;
 		}
 		if (this.work == null) {
@@ -82,12 +104,20 @@ public class Document {
 		return this.id;
 	}
 
+	public String getMetaName() {
+		return this.metaName;
+	}
+
 	public String getName() {
 		return this.name;
 	}
 
 	public List<Section> getSections() {
 		return this.sections;
+	}
+
+	public List<Tool> getTools() {
+		return this.tools;
 	}
 
 	public Work getWork() {
@@ -99,10 +129,16 @@ public class Document {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+		result = prime * result + ((this.metaName == null) ? 0 : this.metaName.hashCode());
 		result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
 		result = prime * result + ((this.sections == null) ? 0 : this.sections.hashCode());
+		result = prime * result + ((this.tools == null) ? 0 : this.tools.hashCode());
 		result = prime * result + ((this.work == null) ? 0 : this.work.hashCode());
 		return result;
+	}
+
+	public void setMetaName(final String metaName) {
+		this.metaName = metaName;
 	}
 
 	public void setName(final String name) {
@@ -115,7 +151,7 @@ public class Document {
 
 	@Override
 	public String toString() {
-		return "Document [id=" + this.id + ", name=" + this.name + ", work=" + this.work + ", sections=" + this.sections
-				+ "]";
+		return "Document [id=" + this.id + ", metaName=" + this.metaName + ", name=" + this.name + ", work=" + this.work
+				+ ", tools=" + this.tools + ", sections=" + this.sections + "]";
 	}
 }

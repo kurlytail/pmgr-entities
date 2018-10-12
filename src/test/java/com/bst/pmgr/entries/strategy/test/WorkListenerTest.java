@@ -6,25 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.TestExecutionListeners.MergeMode;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.bst.pmgr.entities.Work;
+import com.bst.pmgr.entities.components.WorkListener;
 import com.bst.pmgr.entities.repositories.WorkRepository;
 import com.bst.pmgr.entities.schema.SchemaService;
-import com.bst.pmgr.entities.strategy.WorkListener;
 import com.bst.utility.components.AuditService;
 import com.bst.utility.testlib.SnapshotListener;
 
 @ExtendWith(SpringExtension.class)
 @TestExecutionListeners(listeners = SnapshotListener.class, mergeMode = MergeMode.MERGE_WITH_DEFAULTS)
 @DataJpaTest
-// @ContextConfiguration(classes = { ComponentTestApplication.class })
 public class WorkListenerTest {
 
 	@TestConfiguration
@@ -51,9 +48,11 @@ public class WorkListenerTest {
 	@Autowired
 	private WorkRepository workRepository;
 	
+	@SuppressWarnings("unused")
 	@Autowired
 	private WorkListener workListener;
 
+	@SuppressWarnings("unused")
 	@Autowired
 	private AuditService auditService;
 	
