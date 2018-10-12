@@ -9,15 +9,20 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.bst.pmgr.entities.Work;
+import com.bst.pmgr.entities.components.WorkListener;
+import com.bst.pmgr.entities.configuration.RepositoryConfig;
+import com.bst.pmgr.entities.repositories.WorkRepository;
+import com.bst.pmgr.entities.schema.SchemaService;
+
 @Configuration
-@EntityScan({ "com.bst.pmgr.entities" })
-@EnableJpaRepositories("com.bst.pmgr.entities.repositories")
+@EntityScan(basePackageClasses = { Work.class })
+@EnableJpaRepositories(basePackageClasses = { WorkRepository.class })
 @EnableTransactionManagement
 @EnableJpaAuditing
 @EnableAspectJAutoProxy
 @EnableAutoConfiguration
-@ComponentScan({ "com.bst.pmgr.entities.components", "com.bst.pmgr.entities.schema",
-		"com.bst.pmgr.entities.configuration" })
+@ComponentScan(basePackageClasses = { WorkListener.class, SchemaService.class, RepositoryConfig.class })
 public class PmgrEntitiesConfiguration {
 
 }

@@ -13,6 +13,10 @@ import com.bst.pmgr.entities.Document;
 import com.bst.pmgr.entities.Process;
 import com.bst.pmgr.entities.ProcessGroup;
 import com.bst.pmgr.entities.Work;
+import com.bst.pmgr.entities.repositories.ActivityRepository;
+import com.bst.pmgr.entities.repositories.DocumentRepository;
+import com.bst.pmgr.entities.repositories.ProcessGroupRepository;
+import com.bst.pmgr.entities.repositories.ProcessRepository;
 import com.bst.pmgr.entities.schema.SchemaService;
 
 @Component
@@ -22,6 +26,18 @@ public class WorkListener {
 
 	@Autowired
 	private SchemaService schemaService;
+
+	@Autowired
+	private ActivityRepository activityRepository;
+
+	@Autowired
+	private DocumentRepository documentRepository;
+
+	@Autowired
+	private ProcessRepository processRepository;
+
+	@Autowired
+	private ProcessGroupRepository processGroupRepository;
 
 	@PrePersist
 	public void prePersist(final Work work) throws Exception {
@@ -34,8 +50,11 @@ public class WorkListener {
 				final Activity activity = new Activity();
 				activity.setMetaName(metaActivity.getName());
 				activity.setName(this.rnd.next());
+				activity.setWork(work);
 				return activity;
 			}).collect(Collectors.toList()));
+
+			activityRepository.saveAll(work.getActivities());
 		}
 
 		if (work.getDocuments().size() == 0) {
@@ -43,8 +62,11 @@ public class WorkListener {
 				final Document document = new Document();
 				document.setMetaName(metaDocument.getName());
 				document.setName(this.rnd.next());
+				document.setWork(work);
 				return document;
 			}).collect(Collectors.toList()));
+
+			documentRepository.saveAll(work.getDocuments());
 		}
 
 		if (work.getProcesses().size() == 0) {
@@ -52,8 +74,11 @@ public class WorkListener {
 				final Process process = new Process();
 				process.setMetaName(metaProcess.getName());
 				process.setName(this.rnd.next());
+				process.setWork(work);
 				return process;
 			}).collect(Collectors.toList()));
+
+			processRepository.saveAll(work.getProcesses());
 		}
 
 		if (work.getProcessGroups().size() == 0) {
@@ -62,8 +87,11 @@ public class WorkListener {
 						final ProcessGroup processGroup = new ProcessGroup();
 						processGroup.setMetaName(metaProcessGroup.getName());
 						processGroup.setName(this.rnd.next());
+						processGroup.setWork(work);
 						return processGroup;
 					}).collect(Collectors.toList()));
+
+			processGroupRepository.saveAll(work.getProcessGroups());
 		}
 	}
 

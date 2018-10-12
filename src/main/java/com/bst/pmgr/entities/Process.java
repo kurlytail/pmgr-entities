@@ -86,6 +86,10 @@ public class Process {
 		return this.name;
 	}
 
+	public Work getWork() {
+		return this.work;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -103,6 +107,10 @@ public class Process {
 
 	public void setName(final String name) {
 		this.name = name;
+	}
+
+	public void setWork(final Work work) {
+		this.work = work;
 	}
 
 	@Override

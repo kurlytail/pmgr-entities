@@ -50,7 +50,7 @@ public class SectionAuditTest {
 	private SectionRepository<Section> sectionRepository;
 
 	@Autowired
-	private DocumentRepository<Document> documentRepository;
+	private DocumentRepository documentRepository;
 
 	@SuppressWarnings("unused")
 	@Autowired
