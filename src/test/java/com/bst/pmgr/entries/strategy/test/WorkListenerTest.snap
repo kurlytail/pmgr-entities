@@ -1,0 +1,140 @@
+{
+  "testWorkListenerInitializeWork" : [ {
+    "id" : 1,
+    "name" : "constructive_carrot",
+    "activities" : [ {
+      "metaName" : "contractAdministration",
+      "name" : "flexible_designer"
+    }, {
+      "metaName" : "costEstimating",
+      "name" : "linear_fund"
+    }, {
+      "metaName" : "humanResourcePlanning",
+      "name" : "popular_leaf"
+    }, {
+      "metaName" : "qualitativeRiskAnalysis",
+      "name" : "steady_parent"
+    }, {
+      "metaName" : "planContracting",
+      "name" : "abstract_rest"
+    }, {
+      "metaName" : "createWbs",
+      "name" : "controversial_supply"
+    }, {
+      "metaName" : "directAndManageProjectExecution",
+      "name" : "fragrant_absorption"
+    }, {
+      "metaName" : "monitorAndControlProjectWork",
+      "name" : "lively_cassette"
+    }, {
+      "metaName" : "performanceReporting",
+      "name" : "powerful_destruction"
+    }, {
+      "metaName" : "riskManagementPlanning",
+      "name" : "straight_fuss"
+    }, {
+      "metaName" : "costBudgeting",
+      "name" : "accessible_lecture"
+    }, {
+      "metaName" : "quantitativeRiskAnalysis",
+      "name" : "cooperative_participant"
+    }, {
+      "metaName" : "acquireProjectTeam",
+      "name" : "fresh_restriction"
+    }, {
+      "metaName" : "communicationsPlanning",
+      "name" : "loose_surgery"
+    }, {
+      "metaName" : "activitySequencing",
+      "name" : "pregnant_acceptance"
+    }, {
+      "metaName" : "scheduleDevelopment",
+      "name" : "strong_cat"
+    }, {
+      "metaName" : "contractClosure",
+      "name" : "addicted_deviation"
+    }, {
+      "metaName" : "performQualityAssurance",
+      "name" : "cruel_game"
+    }, {
+      "metaName" : "requestSellerResponses",
+      "name" : "full-time_legend"
+    }, {
+      "metaName" : "developProjectCharter",
+      "name" : "loyal_party"
+    }, {
+      "metaName" : "manageStakeholders",
+      "name" : "primary_retreat"
+    }, {
+      "metaName" : "developPreliminaryProjectScopeStatement",
+      "name" : "stupid_survivor"
+    }, {
+      "metaName" : "planPurchasesAndAcquisitions",
+      "name" : "aggressive_accumulation"
+    }, {
+      "metaName" : "riskMonitoringAndControl",
+      "name" : "cute_cattle"
+    }, {
+      "metaName" : "closeProject",
+      "name" : "generous_dialogue"
+    }, {
+      "metaName" : "scopeControl",
+      "name" : "major_garden"
+    }, {
+      "metaName" : "integratedChangeControl",
+      "name" : "professional_lemon"
+    }, {
+      "metaName" : "riskResponsePlanning",
+      "name" : "sudden_passion"
+    }, {
+      "metaName" : "activityResourceEstimating",
+      "name" : "alive_revival"
+    }, {
+      "metaName" : "activityDurationEstimating",
+      "name" : "dead_sweet"
+    }, {
+      "metaName" : "manageProjectTeam",
+      "name" : "glad_acquisition"
+    }, {
+      "metaName" : "scopeVerification",
+      "name" : "mathematical_celebration"
+    }, {
+      "metaName" : "costControl",
+      "name" : "proper_diet"
+    }, {
+      "metaName" : "scopePlanning",
+      "name" : "surprised_gear"
+    }, {
+      "metaName" : "selectSellers",
+      "name" : "ambitious_liability"
+    }, {
+      "metaName" : "developProjectTeam",
+      "name" : "decorative_pasture"
+    }, {
+      "metaName" : "scheduleControl",
+      "name" : "grand_rhythm"
+    }, {
+      "metaName" : "scopeDefinition",
+      "name" : "mechanical_syllable"
+    }, {
+      "metaName" : "developProjectManagementPlan",
+      "name" : "public_addition"
+    }, {
+      "metaName" : "informationDistribution",
+      "name" : "systematic_censorship"
+    }, {
+      "metaName" : "activityDefinition",
+      "name" : "anonymous_dimension"
+    }, {
+      "metaName" : "qualityPlanning",
+      "name" : "democratic_gentleman"
+    }, {
+      "metaName" : "riskIdentification",
+      "name" : "green_lid"
+    } ],
+    "documents" : [ ],
+    "tools" : [ ],
+    "processes" : [ ],
+    "processGroups" : [ ]
+  } ]
+}

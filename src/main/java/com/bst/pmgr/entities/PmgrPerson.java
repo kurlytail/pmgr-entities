@@ -11,12 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
-import com.bst.pmgr.entities.audit.PmgrPersonAudit;
 import com.bst.user.authentication.entities.Person;
+import com.bst.utility.components.AuditListener;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-@EntityListeners(PmgrPersonAudit.class)
+@EntityListeners(AuditListener.class)
 @Entity
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class PmgrPerson {

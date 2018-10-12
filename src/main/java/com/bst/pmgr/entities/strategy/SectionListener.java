@@ -1,13 +1,16 @@
-package com.bst.pmgr.entities.audit;
+package com.bst.pmgr.entities.strategy;
 
 import javax.persistence.PrePersist;
 
+import org.springframework.stereotype.Component;
+
 import com.bst.pmgr.entities.Section;
 
-public class SectionAudit {
+@Component
+public class SectionListener {
 	
 	@PrePersist
-	public void beforeAnyOperation(Section section) {
+	public void prePersist(final Section section) throws Exception {
 		if (section.getDocument() == null) {
 			throw new IllegalStateException("Section.document should be set");
 		}

@@ -7,6 +7,6 @@ import com.bst.pmgr.entities.Work;
 import com.google.common.base.Optional;
 
 @RepositoryRestResource
-public interface WorkRepository extends CrudRepository<Work, Long>, WorkRepositoryStrategy {
+public interface WorkRepository extends CrudRepository<Work, Long> {
 	Optional<Work> findByName(final String name);
 }

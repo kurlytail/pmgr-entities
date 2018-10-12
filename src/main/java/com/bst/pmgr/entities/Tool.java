@@ -10,11 +10,11 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 
-import com.bst.pmgr.entities.audit.ToolAudit;
+import com.bst.utility.components.AuditListener;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-@EntityListeners(ToolAudit.class)
+@EntityListeners(AuditListener.class)
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "toolType")

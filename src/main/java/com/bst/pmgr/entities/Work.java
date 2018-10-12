@@ -17,11 +17,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.bst.pmgr.entities.audit.WorkAudit;
+import com.bst.utility.components.AuditListener;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-@EntityListeners(WorkAudit.class)
+@EntityListeners(AuditListener.class)
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "workType")

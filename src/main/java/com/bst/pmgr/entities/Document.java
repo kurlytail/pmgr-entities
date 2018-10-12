@@ -13,11 +13,11 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import com.bst.pmgr.entities.audit.DocumentAudit;
+import com.bst.utility.components.AuditListener;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-@EntityListeners(DocumentAudit.class)
+@EntityListeners(AuditListener.class)
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "documentType")

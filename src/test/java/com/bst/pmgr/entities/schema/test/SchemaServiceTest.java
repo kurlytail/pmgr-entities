@@ -18,15 +18,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 @ExtendWith(SpringExtension.class)
 @TestExecutionListeners(listeners = SnapshotListener.class, mergeMode = MergeMode.MERGE_WITH_DEFAULTS)
 public class SchemaServiceTest {
-	
-    @TestConfiguration
-    static class SchemaServiceTestConfiguration {
-  
-        @Bean
-        public SchemaService schemaService() throws JsonProcessingException, IOException {
-            return new SchemaService();
-        }
-    }
+
+	@TestConfiguration
+	static class SchemaServiceTestConfiguration {
+
+		@Bean
+		public SchemaService schemaService() throws JsonProcessingException, IOException {
+			return new SchemaService();
+		}
+	}
 
 	@Autowired
 	private SchemaService schemaService;
