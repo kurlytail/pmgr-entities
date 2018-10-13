@@ -13,240 +13,263 @@
           "id" : 3,
           "metaName" : "contractAdministration",
           "name" : "flexible_designer",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 4,
           "metaName" : "costEstimating",
           "name" : "linear_fund",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 5,
           "metaName" : "humanResourcePlanning",
           "name" : "popular_leaf",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 6,
           "metaName" : "qualitativeRiskAnalysis",
           "name" : "steady_parent",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 7,
           "metaName" : "planContracting",
           "name" : "abstract_rest",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 8,
           "metaName" : "createWbs",
           "name" : "controversial_supply",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 9,
           "metaName" : "directAndManageProjectExecution",
           "name" : "fragrant_absorption",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 10,
           "metaName" : "monitorAndControlProjectWork",
           "name" : "lively_cassette",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 11,
           "metaName" : "performanceReporting",
           "name" : "powerful_destruction",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 12,
           "metaName" : "riskManagementPlanning",
           "name" : "straight_fuss",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 13,
           "metaName" : "costBudgeting",
           "name" : "accessible_lecture",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 14,
           "metaName" : "quantitativeRiskAnalysis",
           "name" : "cooperative_participant",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 15,
           "metaName" : "acquireProjectTeam",
           "name" : "fresh_restriction",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 16,
           "metaName" : "communicationsPlanning",
           "name" : "loose_surgery",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 17,
           "metaName" : "activitySequencing",
           "name" : "pregnant_acceptance",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 18,
           "metaName" : "scheduleDevelopment",
           "name" : "strong_cat",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 19,
           "metaName" : "contractClosure",
           "name" : "addicted_deviation",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 20,
           "metaName" : "performQualityAssurance",
           "name" : "cruel_game",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 21,
           "metaName" : "requestSellerResponses",
           "name" : "full-time_legend",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 22,
           "metaName" : "developProjectCharter",
           "name" : "loyal_party",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 23,
           "metaName" : "manageStakeholders",
           "name" : "primary_retreat",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 24,
           "metaName" : "developPreliminaryProjectScopeStatement",
           "name" : "stupid_survivor",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 25,
           "metaName" : "planPurchasesAndAcquisitions",
           "name" : "aggressive_accumulation",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 26,
           "metaName" : "riskMonitoringAndControl",
           "name" : "cute_cattle",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 27,
           "metaName" : "closeProject",
           "name" : "generous_dialogue",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 28,
           "metaName" : "scopeControl",
           "name" : "major_garden",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 29,
           "metaName" : "integratedChangeControl",
           "name" : "professional_lemon",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 30,
           "metaName" : "riskResponsePlanning",
           "name" : "sudden_passion",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 31,
           "metaName" : "activityResourceEstimating",
           "name" : "alive_revival",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 32,
           "metaName" : "activityDurationEstimating",
           "name" : "dead_sweet",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 33,
           "metaName" : "manageProjectTeam",
           "name" : "glad_acquisition",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 34,
           "metaName" : "scopeVerification",
           "name" : "mathematical_celebration",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 35,
           "metaName" : "costControl",
           "name" : "proper_diet",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 36,
           "metaName" : "scopePlanning",
           "name" : "surprised_gear",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 37,
           "metaName" : "selectSellers",
           "name" : "ambitious_liability",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 38,
           "metaName" : "developProjectTeam",
           "name" : "decorative_pasture",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 39,
           "metaName" : "scheduleControl",
           "name" : "grand_rhythm",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 40,
           "metaName" : "scopeDefinition",
           "name" : "mechanical_syllable",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 41,
           "metaName" : "developProjectManagementPlan",
           "name" : "public_addition",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 42,
           "metaName" : "informationDistribution",
           "name" : "systematic_censorship",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 43,
           "metaName" : "activityDefinition",
           "name" : "anonymous_dimension",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 44,
           "metaName" : "qualityPlanning",
           "name" : "democratic_gentleman",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         }, {
           "id" : 45,
           "metaName" : "riskIdentification",
           "name" : "green_lid",
-          "work" : 2
+          "work" : 2,
+          "tools" : [ ]
         } ],
         "documents" : [ 1 ],
-        "tools" : [ {
-          "id" : 60,
-          "name" : "constructive_carrot",
-          "metaName" : "preassignment",
-          "document" : 1
-        }, {
-          "id" : 61,
-          "name" : "flexible_designer",
-          "metaName" : "negotiation",
-          "document" : 1
-        }, {
-          "id" : 62,
-          "name" : "linear_fund",
-          "metaName" : "acquisition",
-          "document" : 1
-        }, {
-          "id" : 63,
-          "name" : "popular_leaf",
-          "metaName" : "virtualTeams",
-          "document" : 1
-        } ],
+        "tools" : [ ],
         "processes" : [ {
           "id" : 51,
           "name" : "middle-class_patience",
@@ -320,7 +343,31 @@
           "work" : 2
         }, 46, 47, 48, 49, 50 ]
       },
-      "tools" : [ 60, 61, 62, 63 ],
+      "tools" : [ {
+        "id" : 60,
+        "name" : "constructive_carrot",
+        "metaName" : "acquisition",
+        "document" : 1,
+        "executionPercent" : 0
+      }, {
+        "id" : 61,
+        "name" : "flexible_designer",
+        "metaName" : "preassignment",
+        "document" : 1,
+        "executionPercent" : 0
+      }, {
+        "id" : 62,
+        "name" : "linear_fund",
+        "metaName" : "virtualTeams",
+        "document" : 1,
+        "executionPercent" : 0
+      }, {
+        "id" : 63,
+        "name" : "popular_leaf",
+        "metaName" : "negotiation",
+        "document" : 1,
+        "executionPercent" : 0
+      } ],
       "sections" : [ ]
     }
   } ] ],
@@ -338,217 +385,260 @@
           "id" : 67,
           "metaName" : "contractAdministration",
           "name" : "attractive_limitation",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 68,
           "metaName" : "costEstimating",
           "name" : "domestic_peanut",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 69,
           "metaName" : "humanResourcePlanning",
           "name" : "hilarious_ritual",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 70,
           "metaName" : "qualitativeRiskAnalysis",
           "name" : "moral_tape",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 71,
           "metaName" : "planContracting",
           "name" : "regular_adviser",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 72,
           "metaName" : "createWbs",
           "name" : "tired_chance",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 73,
           "metaName" : "directAndManageProjectExecution",
           "name" : "aware_discount",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 74,
           "metaName" : "monitorAndControlProjectWork",
           "name" : "due_glory",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 75,
           "metaName" : "performanceReporting",
           "name" : "honest_lion",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 76,
           "metaName" : "riskManagementPlanning",
           "name" : "musical_penalty",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 77,
           "metaName" : "costBudgeting",
           "name" : "reliable_robot",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 78,
           "metaName" : "quantitativeRiskAnalysis",
           "name" : "traditional_taxi",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 79,
           "metaName" : "acquireProjectTeam",
           "name" : "balanced_age",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 80,
           "metaName" : "communicationsPlanning",
           "name" : "early_chapter",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 81,
           "metaName" : "activitySequencing",
           "name" : "hot_disease",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 82,
           "metaName" : "scheduleDevelopment",
           "name" : "native_goal",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 83,
           "metaName" : "contractClosure",
           "name" : "residential_literacy",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 84,
           "metaName" : "performQualityAssurance",
           "name" : "true_pensioner",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 85,
           "metaName" : "requestSellerResponses",
           "name" : "beautiful_roof",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 86,
           "metaName" : "developProjectCharter",
           "name" : "effective_tear",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 87,
           "metaName" : "manageStakeholders",
           "name" : "ignorant_agony",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 88,
           "metaName" : "developPreliminaryProjectScopeStatement",
           "name" : "neutral_charity",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 89,
           "metaName" : "planPurchasesAndAcquisitions",
           "name" : "restricted_disorder",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 90,
           "metaName" : "riskMonitoringAndControl",
           "name" : "unanimous_gold",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 91,
           "metaName" : "closeProject",
           "name" : "blank_loan",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 92,
           "metaName" : "scopeControl",
           "name" : "eligible_performance",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 93,
           "metaName" : "integratedChangeControl",
           "name" : "implicit_rose",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 94,
           "metaName" : "riskResponsePlanning",
           "name" : "noisy_telephone",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 95,
           "metaName" : "activityResourceEstimating",
           "name" : "right_aids",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 96,
           "metaName" : "activityDurationEstimating",
           "name" : "unemployed_chauvinist",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 97,
           "metaName" : "manageProjectTeam",
           "name" : "bold_distributor",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 98,
           "metaName" : "scopeVerification",
           "name" : "empty_gown",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 99,
           "metaName" : "costControl",
           "name" : "inadequate_log",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 100,
           "metaName" : "scopePlanning",
           "name" : "obese_person",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 101,
           "metaName" : "selectSellers",
           "name" : "round_routine",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 102,
           "metaName" : "developProjectTeam",
           "name" : "uniform_temptation",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 103,
           "metaName" : "scheduleControl",
           "name" : "bureaucratic_aisle",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 104,
           "metaName" : "scopeDefinition",
           "name" : "environmental_chemistry",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 105,
           "metaName" : "developProjectManagementPlan",
           "name" : "incredible_division",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 106,
           "metaName" : "informationDistribution",
           "name" : "occupational_grain",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 107,
           "metaName" : "activityDefinition",
           "name" : "safe_loss",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 108,
           "metaName" : "qualityPlanning",
           "name" : "unlike_phenomenon",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 109,
           "metaName" : "riskIdentification",
           "name" : "cautious_ruin",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         } ],
         "documents" : [ {
           "id" : 65,
@@ -558,47 +648,31 @@
           "tools" : [ {
             "id" : 124,
             "name" : "steady_parent",
-            "metaName" : "preassignment",
-            "document" : 65
+            "metaName" : "acquisition",
+            "document" : 65,
+            "executionPercent" : 0
           }, {
             "id" : 125,
             "name" : "abstract_rest",
-            "metaName" : "negotiation",
-            "document" : 65
+            "metaName" : "preassignment",
+            "document" : 65,
+            "executionPercent" : 0
           }, {
             "id" : 126,
             "name" : "controversial_supply",
-            "metaName" : "acquisition",
-            "document" : 65
+            "metaName" : "virtualTeams",
+            "document" : 65,
+            "executionPercent" : 0
           }, {
             "id" : 127,
             "name" : "fragrant_absorption",
-            "metaName" : "virtualTeams",
-            "document" : 65
+            "metaName" : "negotiation",
+            "document" : 65,
+            "executionPercent" : 0
           } ],
           "sections" : [ ]
         }, 128 ],
-        "tools" : [ 124, 125, 126, 127, {
-          "id" : 129,
-          "name" : "lively_cassette",
-          "metaName" : "preassignment",
-          "document" : 128
-        }, {
-          "id" : 130,
-          "name" : "powerful_destruction",
-          "metaName" : "negotiation",
-          "document" : 128
-        }, {
-          "id" : 131,
-          "name" : "straight_fuss",
-          "metaName" : "acquisition",
-          "document" : 128
-        }, {
-          "id" : 132,
-          "name" : "accessible_lecture",
-          "metaName" : "virtualTeams",
-          "document" : 128
-        } ],
+        "tools" : [ ],
         "processes" : [ {
           "id" : 115,
           "name" : "eternal_tent",
@@ -672,7 +746,31 @@
           "work" : 66
         }, 110, 111, 112, 113, 114 ]
       },
-      "tools" : [ 129, 130, 131, 132 ],
+      "tools" : [ {
+        "id" : 129,
+        "name" : "lively_cassette",
+        "metaName" : "acquisition",
+        "document" : 128,
+        "executionPercent" : 0
+      }, {
+        "id" : 130,
+        "name" : "powerful_destruction",
+        "metaName" : "preassignment",
+        "document" : 128,
+        "executionPercent" : 0
+      }, {
+        "id" : 131,
+        "name" : "straight_fuss",
+        "metaName" : "virtualTeams",
+        "document" : 128,
+        "executionPercent" : 0
+      }, {
+        "id" : 132,
+        "name" : "accessible_lecture",
+        "metaName" : "negotiation",
+        "document" : 128,
+        "executionPercent" : 0
+      } ],
       "sections" : [ ]
     }
   } ], [ {
@@ -689,217 +787,260 @@
           "id" : 67,
           "metaName" : "contractAdministration",
           "name" : "attractive_limitation",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 68,
           "metaName" : "costEstimating",
           "name" : "domestic_peanut",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 69,
           "metaName" : "humanResourcePlanning",
           "name" : "hilarious_ritual",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 70,
           "metaName" : "qualitativeRiskAnalysis",
           "name" : "moral_tape",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 71,
           "metaName" : "planContracting",
           "name" : "regular_adviser",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 72,
           "metaName" : "createWbs",
           "name" : "tired_chance",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 73,
           "metaName" : "directAndManageProjectExecution",
           "name" : "aware_discount",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 74,
           "metaName" : "monitorAndControlProjectWork",
           "name" : "due_glory",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 75,
           "metaName" : "performanceReporting",
           "name" : "honest_lion",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 76,
           "metaName" : "riskManagementPlanning",
           "name" : "musical_penalty",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 77,
           "metaName" : "costBudgeting",
           "name" : "reliable_robot",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 78,
           "metaName" : "quantitativeRiskAnalysis",
           "name" : "traditional_taxi",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 79,
           "metaName" : "acquireProjectTeam",
           "name" : "balanced_age",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 80,
           "metaName" : "communicationsPlanning",
           "name" : "early_chapter",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 81,
           "metaName" : "activitySequencing",
           "name" : "hot_disease",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 82,
           "metaName" : "scheduleDevelopment",
           "name" : "native_goal",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 83,
           "metaName" : "contractClosure",
           "name" : "residential_literacy",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 84,
           "metaName" : "performQualityAssurance",
           "name" : "true_pensioner",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 85,
           "metaName" : "requestSellerResponses",
           "name" : "beautiful_roof",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 86,
           "metaName" : "developProjectCharter",
           "name" : "effective_tear",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 87,
           "metaName" : "manageStakeholders",
           "name" : "ignorant_agony",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 88,
           "metaName" : "developPreliminaryProjectScopeStatement",
           "name" : "neutral_charity",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 89,
           "metaName" : "planPurchasesAndAcquisitions",
           "name" : "restricted_disorder",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 90,
           "metaName" : "riskMonitoringAndControl",
           "name" : "unanimous_gold",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 91,
           "metaName" : "closeProject",
           "name" : "blank_loan",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 92,
           "metaName" : "scopeControl",
           "name" : "eligible_performance",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 93,
           "metaName" : "integratedChangeControl",
           "name" : "implicit_rose",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 94,
           "metaName" : "riskResponsePlanning",
           "name" : "noisy_telephone",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 95,
           "metaName" : "activityResourceEstimating",
           "name" : "right_aids",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 96,
           "metaName" : "activityDurationEstimating",
           "name" : "unemployed_chauvinist",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 97,
           "metaName" : "manageProjectTeam",
           "name" : "bold_distributor",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 98,
           "metaName" : "scopeVerification",
           "name" : "empty_gown",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 99,
           "metaName" : "costControl",
           "name" : "inadequate_log",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 100,
           "metaName" : "scopePlanning",
           "name" : "obese_person",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 101,
           "metaName" : "selectSellers",
           "name" : "round_routine",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 102,
           "metaName" : "developProjectTeam",
           "name" : "uniform_temptation",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 103,
           "metaName" : "scheduleControl",
           "name" : "bureaucratic_aisle",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 104,
           "metaName" : "scopeDefinition",
           "name" : "environmental_chemistry",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 105,
           "metaName" : "developProjectManagementPlan",
           "name" : "incredible_division",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 106,
           "metaName" : "informationDistribution",
           "name" : "occupational_grain",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 107,
           "metaName" : "activityDefinition",
           "name" : "safe_loss",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 108,
           "metaName" : "qualityPlanning",
           "name" : "unlike_phenomenon",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         }, {
           "id" : 109,
           "metaName" : "riskIdentification",
           "name" : "cautious_ruin",
-          "work" : 66
+          "work" : 66,
+          "tools" : [ ]
         } ],
         "documents" : [ 65, {
           "id" : 128,
@@ -909,47 +1050,31 @@
           "tools" : [ {
             "id" : 129,
             "name" : "lively_cassette",
-            "metaName" : "preassignment",
-            "document" : 128
+            "metaName" : "acquisition",
+            "document" : 128,
+            "executionPercent" : 0
           }, {
             "id" : 130,
             "name" : "powerful_destruction",
-            "metaName" : "negotiation",
-            "document" : 128
+            "metaName" : "preassignment",
+            "document" : 128,
+            "executionPercent" : 0
           }, {
             "id" : 131,
             "name" : "straight_fuss",
-            "metaName" : "acquisition",
-            "document" : 128
+            "metaName" : "virtualTeams",
+            "document" : 128,
+            "executionPercent" : 0
           }, {
             "id" : 132,
             "name" : "accessible_lecture",
-            "metaName" : "virtualTeams",
-            "document" : 128
+            "metaName" : "negotiation",
+            "document" : 128,
+            "executionPercent" : 0
           } ],
           "sections" : [ ]
         } ],
-        "tools" : [ {
-          "id" : 124,
-          "name" : "steady_parent",
-          "metaName" : "preassignment",
-          "document" : 65
-        }, {
-          "id" : 125,
-          "name" : "abstract_rest",
-          "metaName" : "negotiation",
-          "document" : 65
-        }, {
-          "id" : 126,
-          "name" : "controversial_supply",
-          "metaName" : "acquisition",
-          "document" : 65
-        }, {
-          "id" : 127,
-          "name" : "fragrant_absorption",
-          "metaName" : "virtualTeams",
-          "document" : 65
-        }, 129, 130, 131, 132 ],
+        "tools" : [ ],
         "processes" : [ {
           "id" : 115,
           "name" : "eternal_tent",
@@ -1023,7 +1148,31 @@
           "work" : 66
         }, 110, 111, 112, 113, 114 ]
       },
-      "tools" : [ 124, 125, 126, 127 ],
+      "tools" : [ {
+        "id" : 124,
+        "name" : "steady_parent",
+        "metaName" : "acquisition",
+        "document" : 65,
+        "executionPercent" : 0
+      }, {
+        "id" : 125,
+        "name" : "abstract_rest",
+        "metaName" : "preassignment",
+        "document" : 65,
+        "executionPercent" : 0
+      }, {
+        "id" : 126,
+        "name" : "controversial_supply",
+        "metaName" : "virtualTeams",
+        "document" : 65,
+        "executionPercent" : 0
+      }, {
+        "id" : 127,
+        "name" : "fragrant_absorption",
+        "metaName" : "negotiation",
+        "document" : 65,
+        "executionPercent" : 0
+      } ],
       "sections" : [ ]
     }
   }, {

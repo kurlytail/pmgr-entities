@@ -39,10 +39,15 @@ public class Document {
 	private Work work;
 
 	@OneToMany(mappedBy = "document", orphanRemoval = true, cascade = CascadeType.ALL)
-	private List<Tool> tools = new ArrayList<>();
+	private final List<Tool> tools = new ArrayList<>();
 
 	@OneToMany(mappedBy = "document", orphanRemoval = true, cascade = CascadeType.ALL)
-	private List<Section> sections = new ArrayList<>();
+	private final List<Section> sections = new ArrayList<>();
+
+	public void addTool(final Tool tool) {
+		this.tools.add(tool);
+		tool.setDocument(this);
+	}
 
 	@Override
 	public boolean equals(final Object obj) {
@@ -136,6 +141,11 @@ public class Document {
 		result = prime * result + ((this.tools == null) ? 0 : this.tools.hashCode());
 		result = prime * result + ((this.work == null) ? 0 : this.work.hashCode());
 		return result;
+	}
+
+	public void removeTool(final Tool tool) {
+		this.tools.remove(tool);
+		tool.setDocument(null);
 	}
 
 	public void setMetaName(final String metaName) {

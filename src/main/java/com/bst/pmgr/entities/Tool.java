@@ -35,7 +35,10 @@ public class Tool {
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Document document;
-	
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Activity activity;
+
 	@Min(0)
 	@Max(100)
 	int executionPercent = 0;
@@ -52,11 +55,21 @@ public class Tool {
 			return false;
 		}
 		final Tool other = (Tool) obj;
+		if (this.activity == null) {
+			if (other.activity != null) {
+				return false;
+			}
+		} else if (!this.activity.equals(other.activity)) {
+			return false;
+		}
 		if (this.document == null) {
 			if (other.document != null) {
 				return false;
 			}
 		} else if (!this.document.equals(other.document)) {
+			return false;
+		}
+		if (this.executionPercent != other.executionPercent) {
 			return false;
 		}
 		if (this.id == null) {
@@ -90,8 +103,16 @@ public class Tool {
 		return true;
 	}
 
+	public Activity getActivity() {
+		return this.activity;
+	}
+
 	public Document getDocument() {
 		return this.document;
+	}
+
+	public int getExecutionPercent() {
+		return this.executionPercent;
 	}
 
 	public Long getId() {
@@ -114,7 +135,9 @@ public class Tool {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((this.activity == null) ? 0 : this.activity.hashCode());
 		result = prime * result + ((this.document == null) ? 0 : this.document.hashCode());
+		result = prime * result + this.executionPercent;
 		result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
 		result = prime * result + ((this.metaName == null) ? 0 : this.metaName.hashCode());
 		result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
@@ -122,8 +145,16 @@ public class Tool {
 		return result;
 	}
 
+	public void setActivity(final Activity activity) {
+		this.activity = activity;
+	}
+
 	public void setDocument(final Document document) {
 		this.document = document;
+	}
+
+	public void setExecutionPercent(final int executionPercent) {
+		this.executionPercent = executionPercent;
 	}
 
 	public void setMetaName(final String metaName) {
@@ -141,7 +172,8 @@ public class Tool {
 	@Override
 	public String toString() {
 		return "Tool [id=" + this.id + ", name=" + this.name + ", metaName=" + this.metaName + ", work=" + this.work
-				+ ", document=" + this.document + "]";
+				+ ", document=" + this.document + ", activity=" + this.activity + ", executionPercent="
+				+ this.executionPercent + "]";
 	}
 
 }

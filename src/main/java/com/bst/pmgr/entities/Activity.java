@@ -1,17 +1,20 @@
 package com.bst.pmgr.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.bst.utility.components.AuditListener;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -32,8 +35,11 @@ public class Activity {
 
 	private String name;
 
-	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Work work;
+
+	@OneToMany(mappedBy = "activity", cascade = CascadeType.ALL)
+	private final List<Tool> tools = new ArrayList<>();
 
 	@Override
 	public boolean equals(final Object obj) {
@@ -68,6 +74,13 @@ public class Activity {
 		} else if (!this.name.equals(other.name)) {
 			return false;
 		}
+		if (this.tools == null) {
+			if (other.tools != null) {
+				return false;
+			}
+		} else if (!this.tools.equals(other.tools)) {
+			return false;
+		}
 		if (this.work == null) {
 			if (other.work != null) {
 				return false;
@@ -90,6 +103,10 @@ public class Activity {
 		return this.name;
 	}
 
+	public List<Tool> getTools() {
+		return this.tools;
+	}
+
 	public Work getWork() {
 		return this.work;
 	}
@@ -101,6 +118,7 @@ public class Activity {
 		result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
 		result = prime * result + ((this.metaName == null) ? 0 : this.metaName.hashCode());
 		result = prime * result + ((this.name == null) ? 0 : this.name.hashCode());
+		result = prime * result + ((this.tools == null) ? 0 : this.tools.hashCode());
 		result = prime * result + ((this.work == null) ? 0 : this.work.hashCode());
 		return result;
 	}
@@ -119,7 +137,7 @@ public class Activity {
 
 	@Override
 	public String toString() {
-		return "Activity [id=" + this.id + ", name=" + this.name + ", metaName=" + this.metaName + ", work=" + this.work
-				+ "]";
+		return "Activity [id=" + this.id + ", metaName=" + this.metaName + ", name=" + this.name + ", work=" + this.work
+				+ ", tools=" + this.tools + "]";
 	}
 }

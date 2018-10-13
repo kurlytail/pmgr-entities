@@ -6,217 +6,260 @@
       "id" : 2,
       "metaName" : "contractAdministration",
       "name" : "flexible_designer",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 3,
       "metaName" : "costEstimating",
       "name" : "linear_fund",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 4,
       "metaName" : "humanResourcePlanning",
       "name" : "popular_leaf",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 5,
       "metaName" : "qualitativeRiskAnalysis",
       "name" : "steady_parent",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 6,
       "metaName" : "planContracting",
       "name" : "abstract_rest",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 7,
       "metaName" : "createWbs",
       "name" : "controversial_supply",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 8,
       "metaName" : "directAndManageProjectExecution",
       "name" : "fragrant_absorption",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 9,
       "metaName" : "monitorAndControlProjectWork",
       "name" : "lively_cassette",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 10,
       "metaName" : "performanceReporting",
       "name" : "powerful_destruction",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 11,
       "metaName" : "riskManagementPlanning",
       "name" : "straight_fuss",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 12,
       "metaName" : "costBudgeting",
       "name" : "accessible_lecture",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 13,
       "metaName" : "quantitativeRiskAnalysis",
       "name" : "cooperative_participant",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 14,
       "metaName" : "acquireProjectTeam",
       "name" : "fresh_restriction",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 15,
       "metaName" : "communicationsPlanning",
       "name" : "loose_surgery",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 16,
       "metaName" : "activitySequencing",
       "name" : "pregnant_acceptance",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 17,
       "metaName" : "scheduleDevelopment",
       "name" : "strong_cat",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 18,
       "metaName" : "contractClosure",
       "name" : "addicted_deviation",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 19,
       "metaName" : "performQualityAssurance",
       "name" : "cruel_game",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 20,
       "metaName" : "requestSellerResponses",
       "name" : "full-time_legend",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 21,
       "metaName" : "developProjectCharter",
       "name" : "loyal_party",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 22,
       "metaName" : "manageStakeholders",
       "name" : "primary_retreat",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 23,
       "metaName" : "developPreliminaryProjectScopeStatement",
       "name" : "stupid_survivor",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 24,
       "metaName" : "planPurchasesAndAcquisitions",
       "name" : "aggressive_accumulation",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 25,
       "metaName" : "riskMonitoringAndControl",
       "name" : "cute_cattle",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 26,
       "metaName" : "closeProject",
       "name" : "generous_dialogue",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 27,
       "metaName" : "scopeControl",
       "name" : "major_garden",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 28,
       "metaName" : "integratedChangeControl",
       "name" : "professional_lemon",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 29,
       "metaName" : "riskResponsePlanning",
       "name" : "sudden_passion",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 30,
       "metaName" : "activityResourceEstimating",
       "name" : "alive_revival",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 31,
       "metaName" : "activityDurationEstimating",
       "name" : "dead_sweet",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 32,
       "metaName" : "manageProjectTeam",
       "name" : "glad_acquisition",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 33,
       "metaName" : "scopeVerification",
       "name" : "mathematical_celebration",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 34,
       "metaName" : "costControl",
       "name" : "proper_diet",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 35,
       "metaName" : "scopePlanning",
       "name" : "surprised_gear",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 36,
       "metaName" : "selectSellers",
       "name" : "ambitious_liability",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 37,
       "metaName" : "developProjectTeam",
       "name" : "decorative_pasture",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 38,
       "metaName" : "scheduleControl",
       "name" : "grand_rhythm",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 39,
       "metaName" : "scopeDefinition",
       "name" : "mechanical_syllable",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 40,
       "metaName" : "developProjectManagementPlan",
       "name" : "public_addition",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 41,
       "metaName" : "informationDistribution",
       "name" : "systematic_censorship",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 42,
       "metaName" : "activityDefinition",
       "name" : "anonymous_dimension",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 43,
       "metaName" : "qualityPlanning",
       "name" : "democratic_gentleman",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     }, {
       "id" : 44,
       "metaName" : "riskIdentification",
       "name" : "green_lid",
-      "work" : 1
+      "work" : 1,
+      "tools" : [ ]
     } ],
     "documents" : [ {
       "id" : 45,
