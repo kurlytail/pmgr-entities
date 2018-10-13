@@ -21,6 +21,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import com.bst.configuration.pmgr.entities.PmgrEntitiesConfiguration;
 import com.bst.pmgr.entities.Document;
 import com.bst.pmgr.entities.Section;
+import com.bst.pmgr.entities.Work;
 import com.bst.pmgr.entities.repositories.DocumentRepository;
 import com.bst.pmgr.entities.repositories.SectionRepository;
 import com.bst.utility.components.AuditService;
@@ -59,6 +60,8 @@ public class SectionAuditTest {
 	@Test
 	public void testDocumentField() throws Exception {
 
+		final Work work = new Work();
+
 		final Section section = new Section();
 		section.setName("testName");
 		Assertions.assertThrows(RuntimeException.class, () -> {
@@ -71,9 +74,12 @@ public class SectionAuditTest {
 
 		Document document = new Document();
 		document.setName("Document");
-		document.setMetaName("testName");
+		document.setMetaName("projectStaffAssignments");
+		work.addDocument(document);
+
 		document = this.documentRepository.save(document);
 		section.setDocument(document);
+
 		this.sectionRepository.save(section);
 		this.entityManager.flush();
 
@@ -84,14 +90,18 @@ public class SectionAuditTest {
 	@Test
 	public void testParentSectionField() throws Exception {
 
+		final Work work = new Work();
+
 		Document document = new Document();
 		document.setName("document");
-		document.setMetaName("testName");
+		document.setMetaName("projectStaffAssignments");
+		work.addDocument(document);
 		document = this.documentRepository.save(document);
 
 		Document document1 = new Document();
 		document1.setName("document1");
-		document1.setMetaName("testName");
+		document1.setMetaName("projectStaffAssignments");
+		work.addDocument(document1);
 		document1 = this.documentRepository.save(document1);
 
 		final Section section = new Section();
