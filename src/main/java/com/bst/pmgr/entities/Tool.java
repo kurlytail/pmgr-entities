@@ -1,5 +1,6 @@
 package com.bst.pmgr.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -9,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 import com.bst.utility.components.AuditListener;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -27,11 +30,15 @@ public class Tool {
 
 	private String metaName;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Work work;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Document document;
+	
+	@Min(0)
+	@Max(100)
+	int executionPercent = 0;
 
 	@Override
 	public boolean equals(final Object obj) {

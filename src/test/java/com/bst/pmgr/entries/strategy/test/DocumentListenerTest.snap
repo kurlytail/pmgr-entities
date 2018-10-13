@@ -1,0 +1,121 @@
+{
+  "testDocumentListenerInitializeDocument" : [ {
+    "id" : 1,
+    "name" : "test work",
+    "activities" : [ ],
+    "documents" : [ {
+      "metaName" : "projectStaffAssignments",
+      "work" : 1,
+      "tools" : [ ],
+      "sections" : [ ]
+    } ],
+    "tools" : [ ],
+    "processes" : [ ],
+    "processGroups" : [ ]
+  }, {
+    "id" : 7,
+    "metaName" : "projectStaffAssignments",
+    "name" : "constructive_carrot",
+    "work" : {
+      "id" : 1,
+      "name" : "test work",
+      "activities" : [ ],
+      "documents" : [ 7 ],
+      "tools" : [ {
+        "id" : 2,
+        "name" : "flexible_designer",
+        "metaName" : "preassignment",
+        "document" : 7
+      }, {
+        "id" : 4,
+        "name" : "linear_fund",
+        "metaName" : "negotiation",
+        "document" : 7
+      }, {
+        "id" : 5,
+        "name" : "popular_leaf",
+        "metaName" : "acquisition",
+        "document" : 7
+      }, {
+        "id" : 6,
+        "name" : "steady_parent",
+        "metaName" : "virtualTeams",
+        "document" : 7
+      } ],
+      "processes" : [ ],
+      "processGroups" : [ ]
+    },
+    "tools" : [ 2, 4, 5, 6 ],
+    "sections" : [ ]
+  }, {
+    "id" : 2,
+    "metaName" : "projectStaffAssignments",
+    "name" : "constructive_carrot",
+    "work" : {
+      "id" : 1,
+      "name" : "test work",
+      "activities" : [ ],
+      "documents" : [ 2 ],
+      "tools" : [ {
+        "id" : 3,
+        "name" : "flexible_designer",
+        "metaName" : "preassignment",
+        "document" : 2
+      }, {
+        "id" : 4,
+        "name" : "linear_fund",
+        "metaName" : "negotiation",
+        "document" : 2
+      }, {
+        "id" : 5,
+        "name" : "popular_leaf",
+        "metaName" : "acquisition",
+        "document" : 2
+      }, {
+        "id" : 6,
+        "name" : "steady_parent",
+        "metaName" : "virtualTeams",
+        "document" : 2
+      } ],
+      "processes" : [ ],
+      "processGroups" : [ ]
+    },
+    "tools" : [ 3, 4, 5, 6 ],
+    "sections" : [ ]
+  }, {
+    "id" : 1,
+    "name" : "test work",
+    "activities" : [ ],
+    "documents" : [ {
+      "id" : 2,
+      "metaName" : "projectStaffAssignments",
+      "name" : "constructive_carrot",
+      "work" : 1,
+      "tools" : [ {
+        "id" : 3,
+        "name" : "flexible_designer",
+        "metaName" : "preassignment",
+        "document" : 2
+      }, {
+        "id" : 4,
+        "name" : "linear_fund",
+        "metaName" : "negotiation",
+        "document" : 2
+      }, {
+        "id" : 5,
+        "name" : "popular_leaf",
+        "metaName" : "acquisition",
+        "document" : 2
+      }, {
+        "id" : 6,
+        "name" : "steady_parent",
+        "metaName" : "virtualTeams",
+        "document" : 2
+      } ],
+      "sections" : [ ]
+    } ],
+    "tools" : [ 3, 4, 5, 6 ],
+    "processes" : [ ],
+    "processGroups" : [ ]
+  } ]
+}

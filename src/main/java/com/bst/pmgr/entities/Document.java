@@ -3,6 +3,7 @@ package com.bst.pmgr.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
@@ -34,13 +35,13 @@ public class Document {
 
 	private String name;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Work work;
 
-	@OneToMany(mappedBy = "document")
+	@OneToMany(mappedBy = "document", orphanRemoval = true, cascade = CascadeType.ALL)
 	private List<Tool> tools = new ArrayList<>();
 
-	@OneToMany(mappedBy = "document")
+	@OneToMany(mappedBy = "document", orphanRemoval = true, cascade = CascadeType.ALL)
 	private List<Section> sections = new ArrayList<>();
 
 	@Override

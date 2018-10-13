@@ -3,6 +3,7 @@ package com.bst.pmgr.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
@@ -27,7 +28,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @DiscriminatorColumn(name = "workType")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @Table(name = "WORK_TABLE")
-public class Work {	
+public class Work {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -35,23 +36,48 @@ public class Work {
 	@Column(nullable = false)
 	private String name;
 
-	@OneToMany(mappedBy = "work")
+	@OneToMany(mappedBy = "work", orphanRemoval = true, cascade = CascadeType.ALL)
 	private final List<Activity> activities = new ArrayList<>();
 
-	@OneToMany(mappedBy = "work")
+	@OneToMany(mappedBy = "work", orphanRemoval = true, cascade = CascadeType.ALL)
 	private final List<Document> documents = new ArrayList<>();
 
-	@OneToMany(mappedBy = "work")
+	@OneToMany(mappedBy = "work", orphanRemoval = true, cascade = CascadeType.ALL)
 	private final List<Tool> tools = new ArrayList<>();
 
-	@OneToMany(mappedBy = "work")
+	@OneToMany(mappedBy = "work", orphanRemoval = true, cascade = CascadeType.ALL)
 	private final List<Process> processes = new ArrayList<>();
 
-	@OneToMany(mappedBy = "work")
+	@OneToMany(mappedBy = "work", orphanRemoval = true, cascade = CascadeType.ALL)
 	private final List<ProcessGroup> processGroups = new ArrayList<>();
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private PmgrPerson createdBy;
+
+	public void addActivity(final Activity activity) {
+		this.activities.add(activity);
+		activity.setWork(this);
+	}
+
+	public void addDocument(final Document document) {
+		this.documents.add(document);
+		document.setWork(this);
+	}
+
+	public void addProcess(final Process process) {
+		this.processes.add(process);
+		process.setWork(this);
+	}
+
+	public void addProcessGroup(final ProcessGroup processGroup) {
+		this.processGroups.add(processGroup);
+		processGroup.setWork(this);
+	}
+
+	public void addTool(final Tool tool) {
+		this.tools.add(tool);
+		tool.setWork(this);
+	}
 
 	@Override
 	public boolean equals(final Object obj) {
@@ -169,6 +195,31 @@ public class Work {
 		result = prime * result + ((this.processes == null) ? 0 : this.processes.hashCode());
 		result = prime * result + ((this.tools == null) ? 0 : this.tools.hashCode());
 		return result;
+	}
+
+	public void removeActivity(final Activity activity) {
+		this.activities.remove(activity);
+		activity.setWork(null);
+	}
+
+	public void removeProcess(final Process process) {
+		this.processes.remove(process);
+		process.setWork(null);
+	}
+
+	public void removeProcessGroup(final ProcessGroup processGroup) {
+		this.processGroups.remove(processGroup);
+		processGroup.setWork(null);
+	}
+
+	public void removeTool(final Tool tool) {
+		this.tools.remove(tool);
+		tool.setWork(null);
+	}
+	
+	public void removeDocument(final Document document) {
+		this.documents.remove(document);
+		document.setWork(null);
 	}
 
 	public void setCreatedBy(final PmgrPerson createdBy) {

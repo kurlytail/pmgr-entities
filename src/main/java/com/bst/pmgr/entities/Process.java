@@ -1,5 +1,6 @@
 package com.bst.pmgr.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -28,7 +29,7 @@ public class Process {
 
 	private String metaName;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Work work;
 
 	@Override

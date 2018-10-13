@@ -13,10 +13,6 @@ import com.bst.pmgr.entities.Document;
 import com.bst.pmgr.entities.Process;
 import com.bst.pmgr.entities.ProcessGroup;
 import com.bst.pmgr.entities.Work;
-import com.bst.pmgr.entities.repositories.ActivityRepository;
-import com.bst.pmgr.entities.repositories.DocumentRepository;
-import com.bst.pmgr.entities.repositories.ProcessGroupRepository;
-import com.bst.pmgr.entities.repositories.ProcessRepository;
 import com.bst.pmgr.entities.schema.SchemaService;
 
 @Component
@@ -27,18 +23,6 @@ public class WorkListener {
 	@Autowired
 	private SchemaService schemaService;
 
-	@Autowired
-	private ActivityRepository activityRepository;
-
-	@Autowired
-	private DocumentRepository documentRepository;
-
-	@Autowired
-	private ProcessRepository processRepository;
-
-	@Autowired
-	private ProcessGroupRepository processGroupRepository;
-
 	@PrePersist
 	public void prePersist(final Work work) throws Exception {
 		if (work.getName() == null) {
@@ -46,39 +30,33 @@ public class WorkListener {
 		}
 
 		if (work.getActivities().size() == 0) {
-			work.getActivities().addAll(this.schemaService.getActivities().values().stream().map(metaActivity -> {
+			this.schemaService.getActivities().values().stream().map(metaActivity -> {
 				final Activity activity = new Activity();
 				activity.setMetaName(metaActivity.getName());
 				activity.setName(this.rnd.next());
-				activity.setWork(work);
+				work.addActivity(activity);
 				return activity;
-			}).collect(Collectors.toList()));
-
-			activityRepository.saveAll(work.getActivities());
+			}).collect(Collectors.toList());
 		}
 
 		if (work.getDocuments().size() == 0) {
-			work.getDocuments().addAll(this.schemaService.getDocuments().values().stream().map(metaDocument -> {
+			this.schemaService.getDocuments().values().stream().map(metaDocument -> {
 				final Document document = new Document();
 				document.setMetaName(metaDocument.getName());
 				document.setName(this.rnd.next());
-				document.setWork(work);
+				work.addDocument(document);
 				return document;
-			}).collect(Collectors.toList()));
-
-			documentRepository.saveAll(work.getDocuments());
+			}).collect(Collectors.toList());
 		}
 
 		if (work.getProcesses().size() == 0) {
-			work.getProcesses().addAll(this.schemaService.getProcesses().values().stream().map(metaProcess -> {
+			this.schemaService.getProcesses().values().stream().map(metaProcess -> {
 				final Process process = new Process();
 				process.setMetaName(metaProcess.getName());
 				process.setName(this.rnd.next());
-				process.setWork(work);
+				work.addProcess(process);
 				return process;
-			}).collect(Collectors.toList()));
-
-			processRepository.saveAll(work.getProcesses());
+			}).collect(Collectors.toList());
 		}
 
 		if (work.getProcessGroups().size() == 0) {
@@ -87,11 +65,9 @@ public class WorkListener {
 						final ProcessGroup processGroup = new ProcessGroup();
 						processGroup.setMetaName(metaProcessGroup.getName());
 						processGroup.setName(this.rnd.next());
-						processGroup.setWork(work);
+						work.addProcessGroup(processGroup);
 						return processGroup;
 					}).collect(Collectors.toList()));
-
-			processGroupRepository.saveAll(work.getProcessGroups());
 		}
 	}
 

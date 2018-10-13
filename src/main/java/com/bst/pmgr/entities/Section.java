@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
@@ -47,14 +48,14 @@ public class Section {
 
 	private String description;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Document document;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Section parentSection;
 
 	@JsonIgnore
-	@OneToMany(mappedBy = "parentSection")
+	@OneToMany(mappedBy = "parentSection", cascade = CascadeType.ALL)
 	private List<Section> childSections = new ArrayList<>();
 
 	@Column(nullable = false, updatable = false)
