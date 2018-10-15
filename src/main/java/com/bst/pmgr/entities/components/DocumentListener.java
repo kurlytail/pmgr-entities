@@ -42,7 +42,6 @@ public class DocumentListener {
 		Map<String, MetaActivity> producingActivities = schemaService.getDocuments().get(document.getMetaName())
 				.getProducingActivities();
 		for (Tool workTool : workTools) {
-			// Equality of references ??
 			if (workTool.getDocument() == document) {
 				producingTools.remove(workTool.getMetaName());
 				continue;
@@ -51,7 +50,6 @@ public class DocumentListener {
 				producingTools.remove(workTool.getMetaName());
 				continue;
 			}
-			
 			document.addTool(workTool);
 		}
 		

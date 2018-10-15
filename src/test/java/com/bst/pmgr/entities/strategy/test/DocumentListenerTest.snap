@@ -1,0 +1,125 @@
+{
+  "testDocumentListenerInitializeDocument" : [ {
+    "id" : 1,
+    "metaName" : "projectStaffAssignments",
+    "name" : "constructive_carrot",
+    "work" : {
+      "id" : 2,
+      "name" : "test work",
+      "activities" : [ ],
+      "documents" : [ 1 ],
+      "tools" : [ {
+        "id" : 3,
+        "name" : "flexible_designer",
+        "metaName" : "acquisition",
+        "work" : 2,
+        "document" : 1,
+        "executionPercent" : 0
+      }, {
+        "id" : 4,
+        "name" : "linear_fund",
+        "metaName" : "preassignment",
+        "work" : 2,
+        "document" : 1,
+        "executionPercent" : 0
+      }, {
+        "id" : 5,
+        "name" : "popular_leaf",
+        "metaName" : "virtualTeams",
+        "work" : 2,
+        "document" : 1,
+        "executionPercent" : 0
+      }, {
+        "id" : 6,
+        "name" : "steady_parent",
+        "metaName" : "negotiation",
+        "work" : 2,
+        "document" : 1,
+        "executionPercent" : 0
+      } ],
+      "processes" : [ ],
+      "processGroups" : [ ]
+    },
+    "tools" : [ 3, 4, 5, 6 ],
+    "sections" : [ ]
+  }, {
+    "id" : 1,
+    "metaName" : "projectStaffAssignments",
+    "name" : "constructive_carrot",
+    "work" : {
+      "id" : 2,
+      "name" : "test work",
+      "activities" : [ ],
+      "documents" : [ 1 ],
+      "tools" : [ {
+        "id" : 4,
+        "name" : "linear_fund",
+        "metaName" : "preassignment",
+        "work" : 2,
+        "document" : 1,
+        "executionPercent" : 0
+      }, {
+        "id" : 5,
+        "name" : "popular_leaf",
+        "metaName" : "virtualTeams",
+        "work" : 2,
+        "document" : 1,
+        "executionPercent" : 0
+      }, {
+        "id" : 6,
+        "name" : "steady_parent",
+        "metaName" : "negotiation",
+        "work" : 2,
+        "document" : 1,
+        "executionPercent" : 0
+      } ],
+      "processes" : [ ],
+      "processGroups" : [ ]
+    },
+    "tools" : [ 4, 5, 6 ],
+    "sections" : [ ]
+  }, {
+    "id" : 1,
+    "metaName" : "projectStaffAssignments",
+    "name" : "new name",
+    "work" : {
+      "id" : 2,
+      "name" : "test work",
+      "activities" : [ ],
+      "documents" : [ 1 ],
+      "tools" : [ {
+        "id" : 4,
+        "name" : "linear_fund",
+        "metaName" : "preassignment",
+        "work" : 2,
+        "document" : 1,
+        "executionPercent" : 0
+      }, {
+        "id" : 5,
+        "name" : "popular_leaf",
+        "metaName" : "virtualTeams",
+        "work" : 2,
+        "document" : 1,
+        "executionPercent" : 0
+      }, {
+        "id" : 6,
+        "name" : "steady_parent",
+        "metaName" : "negotiation",
+        "work" : 2,
+        "document" : 1,
+        "executionPercent" : 0
+      }, {
+        "id" : 7,
+        "name" : "abstract_rest",
+        "metaName" : "acquisition",
+        "work" : 2,
+        "document" : 1,
+        "executionPercent" : 0
+      } ],
+      "processes" : [ ],
+      "processGroups" : [ ]
+    },
+    "tools" : [ 4, 5, 6, 7 ],
+    "sections" : [ ]
+  } ]
+}

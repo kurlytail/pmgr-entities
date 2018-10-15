@@ -6,17 +6,14 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 import com.bst.user.authentication.entities.Person;
-import com.bst.utility.components.AuditListener;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-@EntityListeners(AuditListener.class)
 @Entity
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class PmgrPerson {
@@ -92,7 +89,7 @@ public class PmgrPerson {
 		result = prime * result + ((this.works == null) ? 0 : this.works.hashCode());
 		return result;
 	}
-	
+
 	public void setId(final Long id) {
 		this.id = id;
 	}

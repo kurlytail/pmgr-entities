@@ -7,7 +7,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,11 +17,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.bst.utility.components.AuditListener;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-@EntityListeners(AuditListener.class)
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "workType")
@@ -202,6 +199,11 @@ public class Work {
 		activity.setWork(null);
 	}
 
+	public void removeDocument(final Document document) {
+		this.documents.remove(document);
+		document.setWork(null);
+	}
+
 	public void removeProcess(final Process process) {
 		this.processes.remove(process);
 		process.setWork(null);
@@ -215,11 +217,6 @@ public class Work {
 	public void removeTool(final Tool tool) {
 		this.tools.remove(tool);
 		tool.setWork(null);
-	}
-	
-	public void removeDocument(final Document document) {
-		this.documents.remove(document);
-		document.setWork(null);
 	}
 
 	public void setCreatedBy(final PmgrPerson createdBy) {

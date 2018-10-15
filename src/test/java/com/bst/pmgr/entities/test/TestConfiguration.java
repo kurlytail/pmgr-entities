@@ -1,8 +1,8 @@
-package com.bst.pmgr.entries.strategy.test;
+package com.bst.pmgr.entities.test;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ComponentTestApplication {
+public class TestConfiguration {
 
 }

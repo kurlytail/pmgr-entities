@@ -7,7 +7,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,11 +15,9 @@ import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import com.bst.utility.components.AuditListener;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
-@EntityListeners(AuditListener.class)
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "documentType")
@@ -44,9 +41,24 @@ public class Document {
 	@OneToMany(mappedBy = "document", orphanRemoval = true, cascade = CascadeType.ALL)
 	private final List<Section> sections = new ArrayList<>();
 
+	public void addSection(final Section section) {
+		if (section.getParentSection() != null) {
+			section.getParentSection().removeSection(section);
+		}
+		this.sections.add(section);
+		section.setDocument(this);
+	}
+
 	public void addTool(final Tool tool) {
+		if (tool.getDocument() != null) {
+			tool.getDocument().removeTool(tool);
+		} else if (tool.getWork() != null) {
+			tool.getWork().removeTool(tool);
+		}
+		
 		this.tools.add(tool);
 		tool.setDocument(this);
+		this.getWork().addTool(tool);
 	}
 
 	@Override
@@ -143,9 +155,15 @@ public class Document {
 		return result;
 	}
 
+	public void removeSection(final Section section) {
+		this.sections.remove(section);
+		section.setDocument(null);
+	}
+
 	public void removeTool(final Tool tool) {
 		this.tools.remove(tool);
 		tool.setDocument(null);
+		this.getWork().removeTool(tool);
 	}
 
 	public void setMetaName(final String metaName) {

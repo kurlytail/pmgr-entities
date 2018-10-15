@@ -11,36 +11,40 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.TestExecutionListeners.MergeMode;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.bst.configuration.pmgr.entities.PmgrEntitiesConfiguration;
 import com.bst.pmgr.entities.Document;
 import com.bst.pmgr.entities.Section;
 import com.bst.pmgr.entities.Work;
-import com.bst.pmgr.entities.repositories.DocumentRepository;
+import com.bst.pmgr.entities.components.SectionListener;
 import com.bst.pmgr.entities.repositories.SectionRepository;
-import com.bst.utility.components.AuditService;
+import com.bst.utility.components.RepositoryAspect;
 import com.bst.utility.testlib.SnapshotListener;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
-@ContextConfiguration(classes = { PmgrEntitiesConfiguration.class })
 @TestExecutionListeners(listeners = SnapshotListener.class, mergeMode = MergeMode.MERGE_WITH_DEFAULTS)
-@TestPropertySource("classpath:section-audit-test.properties")
+@ContextConfiguration(classes = { TestConfiguration.class })
 public class SectionAuditTest {
 
 	@TestConfiguration
 	@EntityScan("com.bst.pmgr.entities")
 	@EnableJpaRepositories("com.bst.pmgr.entities.repositories")
-	static class WorkListenerTestConfiguration {
+	@EnableAspectJAutoProxy
+	static class SectionAuditTestConfiguration {
 		@Bean
-		public AuditService getAuditService() {
-			return new AuditService();
+		public RepositoryAspect getRepositoryAspect() {
+			return new RepositoryAspect();
+		}
+
+		@Bean
+		public SectionListener getSectionListener() {
+			return new SectionListener();
 		}
 	}
 
@@ -50,17 +54,15 @@ public class SectionAuditTest {
 	@Autowired
 	private SectionRepository<Section> sectionRepository;
 
-	@Autowired
-	private DocumentRepository documentRepository;
-
 	@SuppressWarnings("unused")
 	@Autowired
-	private AuditService auditService;
+	private SectionListener sectionListener;
 
 	@Test
 	public void testDocumentField() throws Exception {
 
 		final Work work = new Work();
+		work.setName("some name");
 
 		final Section section = new Section();
 		section.setName("testName");
@@ -72,13 +74,11 @@ public class SectionAuditTest {
 		List<Section> sections = this.sectionRepository.findAll();
 		SnapshotListener.expect(sections).toMatchSnapshot();
 
-		Document document = new Document();
+		final Document document = new Document();
 		document.setName("Document");
 		document.setMetaName("projectStaffAssignments");
 		work.addDocument(document);
-
-		document = this.documentRepository.save(document);
-		section.setDocument(document);
+		document.addSection(section);
 
 		this.sectionRepository.save(section);
 		this.entityManager.flush();
@@ -91,37 +91,36 @@ public class SectionAuditTest {
 	public void testParentSectionField() throws Exception {
 
 		final Work work = new Work();
+		work.setName("some test");
 
-		Document document = new Document();
+		final Document document = new Document();
 		document.setName("document");
 		document.setMetaName("projectStaffAssignments");
 		work.addDocument(document);
-		document = this.documentRepository.save(document);
 
-		Document document1 = new Document();
+		final Document document1 = new Document();
 		document1.setName("document1");
 		document1.setMetaName("projectStaffAssignments");
 		work.addDocument(document1);
-		document1 = this.documentRepository.save(document1);
 
 		final Section section = new Section();
 		section.setName("testName");
-		section.setDocument(document);
+		document.addSection(section);
 
 		Section parentSection = new Section();
 		parentSection.setName("parent testName");
-		parentSection.setDocument(document1);
-		parentSection = this.sectionRepository.save(parentSection);
+		document1.addSection(parentSection);
 
-		section.setParentSection(parentSection);
-		Assertions.assertThrows(RuntimeException.class, () -> {
-			this.sectionRepository.save(section);
-			this.entityManager.flush();
-		});
+		parentSection = this.sectionRepository.save(parentSection);
+		parentSection.addSection(section);
+
+		document.addSection(section);
+		this.sectionRepository.save(section);
+
 		List<Section> sections = this.sectionRepository.findAll();
 		SnapshotListener.expect(sections).toMatchSnapshot();
 
-		parentSection.setDocument(document);
+		parentSection.setDocument(document1);
 		parentSection = this.sectionRepository.save(parentSection);
 		section.setParentSection(parentSection);
 		this.sectionRepository.save(section);

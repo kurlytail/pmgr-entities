@@ -5,10 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,13 +25,11 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import com.bst.utility.components.AuditListener;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
-@EntityListeners(AuditListener.class)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "sectionType")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
@@ -56,9 +52,8 @@ public class Section {
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "parentSection", cascade = CascadeType.ALL)
-	private List<Section> childSections = new ArrayList<>();
+	private final List<Section> childSections = new ArrayList<>();
 
-	@Column(nullable = false, updatable = false)
 	@CreatedDate
 	@Temporal(TemporalType.TIMESTAMP)
 	// @JsonFormat(shape = JsonFormat.Shape.STRING, pattern =
@@ -78,6 +73,17 @@ public class Section {
 
 	@LastModifiedBy
 	private String modifiedBy;
+
+	public void addSection(final Section section) {
+		if (section.getParentSection() != null) {
+			section.getParentSection().removeSection(section);
+		} else if (section.getDocument() != null) {
+			section.getDocument().removeSection(section);
+		}
+		this.childSections.add(section);
+		section.setParentSection(this);
+		section.setDocument(this.getDocument());
+	}
 
 	@Override
 	public boolean equals(final Object obj) {
@@ -238,6 +244,11 @@ public class Section {
 	@PreRemove
 	public void onPrePersist() {
 		System.out.println("prepersist");
+	}
+
+	public void removeSection(final Section section) {
+		this.childSections.remove(section);
+		section.setParentSection(null);
 	}
 
 	public void setDescription(final String description) {
