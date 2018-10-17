@@ -16,13 +16,16 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.TestExecutionListeners.MergeMode;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.bst.pmgr.entities.Document;
+import com.bst.pmgr.entities.PmgrPerson;
 import com.bst.pmgr.entities.Section;
 import com.bst.pmgr.entities.Work;
 import com.bst.pmgr.entities.components.SectionListener;
 import com.bst.pmgr.entities.repositories.SectionRepository;
+import com.bst.user.authentication.entities.Person;
 import com.bst.utility.components.RepositoryAspect;
 import com.bst.utility.testlib.SnapshotListener;
 
@@ -30,6 +33,7 @@ import com.bst.utility.testlib.SnapshotListener;
 @DataJpaTest
 @TestExecutionListeners(listeners = SnapshotListener.class, mergeMode = MergeMode.MERGE_WITH_DEFAULTS)
 @ContextConfiguration(classes = { TestConfiguration.class })
+@TestPropertySource("classpath:section-audit-test.properties")
 public class SectionAuditTest {
 
 	@TestConfiguration
@@ -64,6 +68,12 @@ public class SectionAuditTest {
 		final Work work = new Work();
 		work.setName("some name");
 
+		final PmgrPerson pmgrPerson = new PmgrPerson();
+		final Person person = new Person();
+		pmgrPerson.setPerson(person);
+		pmgrPerson.setName("test person");
+		work.setPerson(pmgrPerson);
+
 		final Section section = new Section();
 		section.setName("testName");
 		Assertions.assertThrows(RuntimeException.class, () -> {
@@ -77,8 +87,8 @@ public class SectionAuditTest {
 		final Document document = new Document();
 		document.setName("Document");
 		document.setMetaName("projectStaffAssignments");
-		work.addDocument(document);
-		document.addSection(section);
+		work.addToDocuments(document);
+		document.addToTopLevelSections(section);
 
 		this.sectionRepository.save(section);
 		this.entityManager.flush();
@@ -93,28 +103,34 @@ public class SectionAuditTest {
 		final Work work = new Work();
 		work.setName("some test");
 
+		final PmgrPerson pmgrPerson = new PmgrPerson();
+		final Person person = new Person();
+		pmgrPerson.setPerson(person);
+		pmgrPerson.setName("test person");
+		work.setPerson(pmgrPerson);
+
 		final Document document = new Document();
 		document.setName("document");
 		document.setMetaName("projectStaffAssignments");
-		work.addDocument(document);
+		work.addToDocuments(document);
 
 		final Document document1 = new Document();
 		document1.setName("document1");
 		document1.setMetaName("projectStaffAssignments");
-		work.addDocument(document1);
+		work.addToDocuments(document1);
 
 		final Section section = new Section();
 		section.setName("testName");
-		document.addSection(section);
+		document.addToTopLevelSections(section);
 
 		Section parentSection = new Section();
 		parentSection.setName("parent testName");
-		document1.addSection(parentSection);
+		document1.addToTopLevelSections(parentSection);
 
 		parentSection = this.sectionRepository.save(parentSection);
-		parentSection.addSection(section);
+		parentSection.addToChildSections(section);
 
-		document.addSection(section);
+		document.addToTopLevelSections(section);
 		this.sectionRepository.save(section);
 
 		List<Section> sections = this.sectionRepository.findAll();

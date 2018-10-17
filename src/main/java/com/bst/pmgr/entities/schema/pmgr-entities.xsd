@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+    targetNamespace="http://www.brainspeedtech.com/pmgr/entities"
+    elementFormDefault="qualified"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:pmgr-entities="http://www.brainspeedtech.com/pmgr/entities">
+
+    <complexType name="Activity">
+        <complexContent>
+            <extension base="pmgr-entities:Identifiable">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0"
+                        name="tools" type="anyURI"
+                        ecore:reference="pmgr-entities:Tool"
+                        ecore:opposite="activity" />
+                    <element maxOccurs="1" minOccurs="1"
+                        name="work" type="anyURI"
+                        ecore:reference="pmgr-entities:Work"
+                        ecore:opposite="activities" />
+                </sequence>
+                <attribute name="metaName" type="string"
+                    use="required"></attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="Process">
+        <complexContent>
+            <extension base="pmgr-entities:Identifiable">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="work" type="anyURI"
+                        ecore:reference="pmgr-entities:Work"
+                        ecore:opposite="processes" />
+                </sequence>
+                <attribute name="metaName" type="string"
+                    use="required"></attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="ProcessGroup">
+        <complexContent>
+            <extension base="pmgr-entities:Identifiable">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="work" type="anyURI"
+                        ecore:reference="pmgr-entities:Work"
+                        ecore:opposite="processGroups" />
+                </sequence>
+                <attribute name="metaName" type="string"
+                    use="required"></attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="Tool">
+        <complexContent>
+            <extension base="pmgr-entities:Identifiable">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="activity" type="anyURI"
+                        ecore:reference="pmgr-entities:Activity"
+                        ecore:opposite="tools" />
+                    <element maxOccurs="1" minOccurs="1"
+                        name="work" type="anyURI"
+                        ecore:reference="pmgr-entities:Work"
+                        ecore:opposite="tools" />
+                </sequence>
+                <attribute name="metaName" type="string"
+                    use="required"></attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="Section">
+        <complexContent>
+            <extension base="pmgr-entities:Identifiable">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="document" type="anyURI"
+                        ecore:reference="pmgr-entities:Document"
+                        ecore:opposite="sections" />
+                    <element maxOccurs="1" minOccurs="0"
+                        name="parentSection" type="anyURI"
+                        ecore:reference="pmgr-entities:Section"
+                        ecore:opposite="childSections" />
+                    <element name="childSections" type="anyURI"
+                        ecore:reference="pmgr-entities:Section"
+                        maxOccurs="unbounded" minOccurs="0"></element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="Document">
+        <complexContent>
+            <extension base="pmgr-entities:Identifiable">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="work" type="anyURI"
+                        ecore:reference="pmgr-entities:Work"
+                        ecore:opposite="documents" />
+                    <element name="sections"
+                        type="pmgr-entities:Section"
+                        maxOccurs="unbounded" minOccurs="0"></element>
+                    <element maxOccurs="unbounded" minOccurs="0"
+                        name="topLevelSections" type="anyURI"
+                        ecore:reference="pmgr-entities:Section" />
+                </sequence>
+                <attribute name="metaName" type="string"
+                    use="required"></attribute>
+            </extension>
+        </complexContent>
+
+    </complexType>
+
+    <complexType name="Work">
+        <complexContent>
+            <extension base="pmgr-entities:Identifiable">
+                <sequence>
+                    <element name="tools"
+                        type="pmgr-entities:Tool" maxOccurs="unbounded"
+                        minOccurs="0"></element>
+                    <element name="activities"
+                        type="pmgr-entities:Activity"
+                        maxOccurs="unbounded" minOccurs="0"></element>
+                    <element name="processes"
+                        type="pmgr-entities:Process"
+                        maxOccurs="unbounded" minOccurs="0"></element>
+                    <element name="documents"
+                        type="pmgr-entities:Document"
+                        maxOccurs="unbounded" minOccurs="0"></element>
+                    <element name="processGroups"
+                        type="pmgr-entities:ProcessGroup"
+                        maxOccurs="unbounded" minOccurs="0"></element>
+                    <element name="person" type="anyURI"
+                        ecore:reference="pmgr-entities:PmgrPerson"
+                        maxOccurs="1" minOccurs="1"></element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="PmgrPerson">
+        <complexContent>
+            <extension base="pmgr-entities:Identifiable">
+                <sequence>
+                    <element name="works"
+                        type="pmgr-entities:Work" maxOccurs="unbounded"
+                        minOccurs="0"></element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="Identifiable">
+        <attribute name="id" type="long"></attribute>
+        <attribute name="name" type="string" use="required"></attribute>
+    </complexType>
+
+    <complexType name="Auditable">
+        <complexContent>
+            <extension base="pmgr-entities:Identifiable"></extension>
+        </complexContent>
+    </complexType>
+</schema>

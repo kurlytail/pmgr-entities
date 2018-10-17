@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="com.brainspeedtech.pmgr.entities" nsURI="http://www.brainspeedtech.com/pmgr/entities"
+    nsPrefix="entities">
+  <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Identifiable">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Activity"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tools" upperBound="-1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Tool"
+        eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Tool/activity">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="tools"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="work" lowerBound="1" eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Work"
+        eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Work/activities">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="work"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="metaName"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Auditable" eSuperTypes="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Identifiable">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Auditable"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Document" eSuperTypes="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Identifiable">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Document"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="work" lowerBound="1" eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Work"
+        eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Work/documents">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="work"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sections" upperBound="-1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Section"
+        containment="true" resolveProxies="false" eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Section/document">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="sections"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="topLevelSections" upperBound="-1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Section">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="topLevelSections"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="metaName"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Identifiable">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Identifiable"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Long"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="id"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PmgrPerson" eSuperTypes="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Identifiable">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="PmgrPerson"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="works" upperBound="-1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Work"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="works"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Identifiable">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Process"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="work" lowerBound="1" eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Work"
+        eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Work/processes">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="work"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="metaName"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessGroup" eSuperTypes="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Identifiable">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ProcessGroup"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="work" lowerBound="1" eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Work"
+        eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Work/processGroups">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="work"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="metaName"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Identifiable">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Section"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="document" lowerBound="1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Document"
+        eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Document/sections">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="document"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentSection" eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Section"
+        eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Section/childSections">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="parentSection"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="childSections" upperBound="-1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Section"
+        eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Section/parentSection">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="childSections"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tool" eSuperTypes="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Identifiable">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Tool"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Activity"
+        eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Activity/tools">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="activity"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="work" lowerBound="1" eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Work"
+        eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Work/tools">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="work"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="metaName"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Work" eSuperTypes="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Identifiable">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Work"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tools" upperBound="-1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Tool"
+        containment="true" resolveProxies="false" eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Tool/work">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="tools"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activities" upperBound="-1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Activity"
+        containment="true" resolveProxies="false" eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Activity/work">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="activities"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processes" upperBound="-1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Process"
+        containment="true" resolveProxies="false" eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Process/work">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="processes"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="documents" upperBound="-1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Document"
+        containment="true" resolveProxies="false" eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//Document/work">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="documents"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processGroups" upperBound="-1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//ProcessGroup"
+        containment="true" resolveProxies="false" eOpposite="/pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//ProcessGroup/work">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="processGroups"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="person" lowerBound="1"
+        eType="ecore:EClass /pmgr-entities/src/main/java/com/bst/pmgr/entities/schema/pmgr-entities.ecore#//PmgrPerson">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="person"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

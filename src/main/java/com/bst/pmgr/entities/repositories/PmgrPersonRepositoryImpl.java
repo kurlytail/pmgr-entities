@@ -20,7 +20,6 @@ public class PmgrPersonRepositoryImpl implements PmgrPersonRepositoryCustom {
 		
 		if (pmgrPerson == null) {
 			pmgrPerson = new PmgrPerson();
-			pmgrPerson.setId(person.getId());
 			pmgrPerson.setPerson(person);
 			entityManager.persist(pmgrPerson);
 			entityManager.flush();

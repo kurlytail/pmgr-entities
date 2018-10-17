@@ -11,13 +11,16 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.TestExecutionListeners.MergeMode;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import com.bst.pmgr.entities.PmgrPerson;
 import com.bst.pmgr.entities.Work;
 import com.bst.pmgr.entities.components.WorkListener;
 import com.bst.pmgr.entities.repositories.WorkRepository;
 import com.bst.pmgr.entities.schema.SchemaService;
+import com.bst.user.authentication.entities.Person;
 import com.bst.utility.components.RepositoryAspect;
 import com.bst.utility.testlib.SnapshotListener;
 
@@ -25,6 +28,7 @@ import com.bst.utility.testlib.SnapshotListener;
 @TestExecutionListeners(listeners = SnapshotListener.class, mergeMode = MergeMode.MERGE_WITH_DEFAULTS)
 @DataJpaTest
 @ContextConfiguration(classes = { TestConfiguration.class })
+@TestPropertySource("classpath:work-service-test.properties")
 public class WorkListenerTest {
 
 	@TestConfiguration
@@ -37,7 +41,7 @@ public class WorkListenerTest {
 		public WorkListener getWorkListener() {
 			return new WorkListener();
 		}
-		
+
 		@Bean
 		public RepositoryAspect getRepositoryAspect() {
 			return new RepositoryAspect();
@@ -60,6 +64,13 @@ public class WorkListenerTest {
 	@Test
 	public void testWorkListenerInitializeWork() throws Exception {
 		Work work = new Work();
+
+		final PmgrPerson pmgrPerson = new PmgrPerson();
+		final Person person = new Person();
+		pmgrPerson.setPerson(person);
+		pmgrPerson.setName("test person");
+		work.setPerson(pmgrPerson);
+
 		work = this.workRepository.save(work);
 		SnapshotListener.expect(work).toMatchSnapshot();
 	}

@@ -34,7 +34,7 @@ public class WorkListener {
 				final Activity activity = new Activity();
 				activity.setMetaName(metaActivity.getName());
 				activity.setName(this.rnd.next());
-				work.addActivity(activity);
+				work.addToActivities(activity);
 				return activity;
 			}).collect(Collectors.toList());
 		}
@@ -44,7 +44,7 @@ public class WorkListener {
 				final Document document = new Document();
 				document.setMetaName(metaDocument.getName());
 				document.setName(this.rnd.next());
-				work.addDocument(document);
+				work.addToDocuments(document);
 				return document;
 			}).collect(Collectors.toList());
 		}
@@ -54,20 +54,19 @@ public class WorkListener {
 				final Process process = new Process();
 				process.setMetaName(metaProcess.getName());
 				process.setName(this.rnd.next());
-				work.addProcess(process);
+				work.addToProcesses(process);
 				return process;
 			}).collect(Collectors.toList());
 		}
 
 		if (work.getProcessGroups().size() == 0) {
-			work.getProcessGroups()
-					.addAll(this.schemaService.getProcessGroups().values().stream().map(metaProcessGroup -> {
-						final ProcessGroup processGroup = new ProcessGroup();
-						processGroup.setMetaName(metaProcessGroup.getName());
-						processGroup.setName(this.rnd.next());
-						work.addProcessGroup(processGroup);
-						return processGroup;
-					}).collect(Collectors.toList()));
+			this.schemaService.getProcessGroups().values().stream().map(metaProcessGroup -> {
+				final ProcessGroup processGroup = new ProcessGroup();
+				processGroup.setMetaName(metaProcessGroup.getName());
+				processGroup.setName(this.rnd.next());
+				work.addToProcessGroups(processGroup);
+				return processGroup;
+			}).collect(Collectors.toList());
 		}
 	}
 

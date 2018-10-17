@@ -18,10 +18,12 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bst.pmgr.entities.Document;
+import com.bst.pmgr.entities.PmgrPerson;
 import com.bst.pmgr.entities.Work;
 import com.bst.pmgr.entities.components.DocumentListener;
 import com.bst.pmgr.entities.repositories.DocumentRepository;
 import com.bst.pmgr.entities.schema.SchemaService;
+import com.bst.user.authentication.entities.Person;
 import com.bst.utility.components.RepositoryAspect;
 import com.bst.utility.testlib.SnapshotListener;
 
@@ -74,23 +76,17 @@ public class DocumentListenerTest {
 			final Work work = new Work();
 			work.setName("test work");
 
+			final PmgrPerson pmgrPerson = new PmgrPerson();
+			final Person person = new Person();
+			pmgrPerson.setPerson(person);
+			pmgrPerson.setName("test person");
+			work.setPerson(pmgrPerson);
+
 			final Document document = new Document();
 			document.setMetaName("projectStaffAssignments");
-			work.addDocument(document);
+			work.addToDocuments(document);
 
 			this.documentRepository.save(document);
-		});
-
-		this.transactionWrapper(() -> {
-			Document document = this.documentRepository.findAll().iterator().next();
-			SnapshotListener.expect(document).toMatchSnapshot();
-
-			document.removeTool(document.getTools().get(0));
-			SnapshotListener.expect(document).toMatchSnapshot();
-
-			document.setName("new name");
-
-			document = this.documentRepository.save(document);
 		});
 
 		final Document document = this.documentRepository.findAll().iterator().next();
